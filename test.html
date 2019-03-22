@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h2>Basics</h2>
+
+    <h3>Buttons und Links</h3>
+
+    <!-- falsch -->
+    <button onclick="location.href='http://baselone.ch'">
+      ich wäre besser ein Link
+    </button>
+
+    <!-- richtig -->
+    <a href="http://baselone.ch">richtig so</a>
+
+
+    <form class="formToSubmit" action="index.html" method="post">
+      <a href="" id="buttonImpersonator">ich wäre besser ein Button</a>
+      <script>
+        document.querySelector('#buttonImpersonator')
+          .addEventListener('click',
+            () => document.querySelector('.formToSubmit').submit()
+          );
+      </script>
+    </form>
+
+    <h2>Eigenimplementaitionen</h2>
+    <select>
+      <option>Basel</option>
+      <option disabled>Zürich</option>
+      <option>Bern</option>
+      <optgroup label="Ausland">
+        <option>München</option>
+        <option>Brüssel</option>
+      </optgroup>
+    </select>
+
+  </body>
+</html>
