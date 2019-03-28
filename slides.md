@@ -33,6 +33,16 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 ----
 
+### Agenda
+
+- Einleitung
+- Grundlagen
+- häufige/schlimme Fehler
+- Eigenimplementationen
+- Tolle Beispiele
+
+----
+
 ### Über mich
 
 Stefani Gerber
@@ -61,6 +71,7 @@ Note:
 - fehleranfälliger
 - schwieriger zu stylen
 - erschwertes Verständnis für andere Entwickler
+- erschwert automatisiertes Testing
 
 Note:
 - Hack -> Fix für den Hack in Browser X -> Fix für den Fix für den Hack...
@@ -81,7 +92,7 @@ Note:
 
 ---
 
-## Basics
+## Grundlagen
 
 Note:
 - um sicherzustellen, dass wir vom selben reden
@@ -95,6 +106,7 @@ Note:
 
 Note:
 - In Browser zeigen (view source, DevTools)
+  - Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
 - property (HTML) vs attribute (DOM)
 - DOM kann sich ändern, ohne dass es in HTML reflektiert wird
 
@@ -159,11 +171,12 @@ Klickt man, und dann passiert etwas
 Note:
 - nicht vermischen
   - wenn was wohin leiten soll, dann soll es auch wie ein Link aussehen und nicht wie ein Button
+  - Erwartungen der Benutzer
 - Link kann auch was anderes enthalten als Text, z.B. ein Bild.
 
 ----
 
-#### Don't
+#### Weird buttons
 
 ```
 <!-- falsch -->
@@ -173,6 +186,7 @@ Note:
 
 <!-- richtig -->
 <a href="http://baselone.ch">richtig so</a>
+<a href="http://baselone.ch"><img src="logo.svg"></a>
 ```
 
 <!-- TODO einen Weg finden, um falsches durchzustreichen -->
@@ -184,7 +198,7 @@ Note:
 
 ----
 
-#### Don't 2
+#### Weird links
 
 ```
 <!-- falsch -->
@@ -223,7 +237,7 @@ Note:
 
 ----
 
-#### Don't
+#### Weird divs
 
 ```
   <div onclick="tueIrgendwas()">Inhalt</div>
@@ -231,6 +245,22 @@ Note:
 
 Note:
 - ok, als Wrapper für Styling
+
+----
+
+#### Weird forms
+
+```
+  <div>
+    <input type="text" />
+    <button onclick="sendTheFormSomehow()">Send</button>
+  </div>
+```
+
+Note:
+- kein form-Tag
+- was, wenn der User nicht klicken kann? -> submit Event verwenden
+- geht auch für JS-Lösungen
 
 ---
 
@@ -268,9 +298,11 @@ Note:
 
 > ... select sieht Sch* aus und passt nicht in unser Design
 
+<!-- TODO finde bessere Formulierung als Tradeoff -->
 Tradeoff
 - Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
 - in allen Browsern
+- Performance-Einbusse
 
 Note:
 - Ist in der Spez seit (TODO nachschauen)
@@ -315,6 +347,21 @@ Note:
 
 Note:
 - all die jQuery-Accordeon
+
+----
+
+### Dialog
+
+Note:
+- wichtig, wie der Fokus gehandhabt wird
+
+----
+
+### Data-list
+
+Note:
+- unterstützt den Benutzer bei der Eingabe
+- kein Ersatz für Select, da es nicht enforcen kann, dass einer der ausgewählten Werte gewählt wird
 
 ----
 
