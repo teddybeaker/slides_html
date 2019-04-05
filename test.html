@@ -18,7 +18,6 @@
     <!-- richtig -->
     <a href="http://baselone.ch">richtig so</a>
 
-
     <form class="formToSubmit" action="index.html" method="post">
       <a href="" id="buttonImpersonator">ich wäre besser ein Button</a>
       <script>
@@ -28,6 +27,12 @@
           );
       </script>
     </form>
+
+    <!-- welche Events triggert der Button? -->
+    <button id="eventSource">events</button>
+    <script>
+      document.querySelector('#eventSource').addEventListener('click', () => console.log('click event triggered'));
+    </script>
 
     <h2>Eigenimplementaitionen</h2>
     <select>

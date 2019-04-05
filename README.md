@@ -34,18 +34,18 @@ _Bereich abgeschlossen nach total X Minuten_
 
 ## Call for Paper
 
-### Bio
-
-Ich bin seit 14 Jahren in der Entwicklung tätig. Hauptsächlich im Bereich Frontend, d.h. ich habe den klassischen Werdegang von statischem HTML zu jQuery-overload hin zu SPAs (in meinem Fall hauptsächlich Angular). Wenn nötig wage ich mich auch an Backenentwicklungen, z.B. in python oder Java.
-
-Ich arbeite bei Bluesky IT-Solutions in Basel, vorwiegend im Bereich Frontend. Co-organizer vom Angular Meetup Basel.
-
 ### Titel
 
-- HTML, das Wichtigste für Nicht-Frontender
+HTML, das Wichtigste für Nicht-Frontender
+
+### Bio
+
+Ich bin seit 14 Jahren in der Entwicklung tätig, hauptsächlich im Bereich Frontend. Ich habe den klassischen Werdegang von statischem HTML über jQuery-gesteuerte Webseiten hin zu Single-Page-Applications (hauptsächlich Angular). Wenn nötig wage ich mich an Backend-Entwicklungen, z.B. in Python oder Java.
+
+Ich arbeite bei Bluesky IT-Solutions in Basel, vorwiegend in der Frontend-Entwicklung. Des Weiteren bin ich Co-Organizer des Angular Meetup Basel.
 
 ### Abstract
 
-Wer genügend Zeit hat, die Spezifikationen und Dokumentationen von allen Technologien zu lesen, die er/sie nutzt, kann sich glücklich schätzen. Dieser Vortag enthält Tipps für Entwickler, die neu in HTML entwickeln. HTML ist eine tolle Markupsprache und kann einem das Entwicklerleben erleichtern - oder zur Hölle machen - je nachdem ob man es richtig anwendet oder nicht.
+Wer genügend Zeit hat die Spezifikationen und die Dokumentationen von allen Technologien zu lesen, kann sich glücklich schätzen. Dieser Vortrag enthält Tipps für Entwickler, die neu in HTML entwickeln. HTML ist eine vielseitige Markup-Sprache und kann einem das Entwicklerleben erleichtern; wenn sie richtig angewendet wird.
 
-In diesem Vortrag werde ich zuerst einige Grundlagen abdecken. Danach zeige ich Beispiele, die mir die Tränen in die Augen treiben, erkläre warum und wie wir es besser machen. Zuletzt werde ich ein paar weniger bekannte HTML-Tags vorstellen, deren Gebrauch die eine oder andere Thirdparty Library ersetzen kann.
+In diesem Vortrag werde ich zuerst einige Grundlagen vermitteln. Danach gehe ich auf Beispiele ein, die mir die Tränen in die Augen treiben und zeige auf, wie es besser geht. Zuletzt werde ich ein paar weniger bekannte HTML-Elemente vorstellen, deren Verwendung die eine oder andere Thirdparty Library ersetzen kann.

@@ -25,6 +25,7 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 <!-- TODO
   - Style Slides
   - welchen Browser verwenden?
+  - Beispiele: Inline, Wechsel in Tabs, Wechsel in total anderes Fenster? Links in Slides, falls ich ein fixes Set an Tabs öffnen kann?
 -->
 
 ----
@@ -37,7 +38,7 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 - Einleitung
 - Grundlagen
-- häufige/schlimme Fehler
+- Antipatterns
 - Eigenimplementationen
 - Tolle Beispiele
 
@@ -99,6 +100,29 @@ Note:
 
 ----
 
+### Minimal HTML
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>valides HTML Dokument</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+```
+
+Note:
+- DOCTYPE für Version, HTML5 wenn immer möglich
+- language -> hilft Browsern, beim übersetzen und Screenreadern beim vorlesen
+- charset: erstes Element in head wegen parsen des Dokuments
+- Titel nicht leer (Body darf lustigerweise schon leer sein TODO wieso?)
+
+----
+
 ### HTML vs DOM
 
 - HTML: Markup Sprache um DOM darzustellen
@@ -109,6 +133,31 @@ Note:
   - Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
 - property (HTML) vs attribute (DOM)
 - DOM kann sich ändern, ohne dass es in HTML reflektiert wird
+
+----
+
+### Tags
+
+- Elemente in HTML
+- z.T. eigenständig, z.T. in Kontext
+
+Note:
+- Dokumentation zeigen, z.B. <input>, das nur im Form Sinn macht
+
+----
+
+### Events
+
+- werden im DOM gefeuert
+- bubblen
+- einige haben Default-Verhalten
+
+Note:
+TODO
+- Beispielabfolge
+- gibt es bei Formularen noch was anderes als reset und submit? Z.B. Files im Hintergrund hochladen? -> Non-standard https://developer.mozilla.org/en-US/docs/Web/Events
+- https://eloquentjavascript.net/15_event.html
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
 ----
 
@@ -145,7 +194,7 @@ Note:
 
 ---
 
-## Häufige/schlimme Fehler
+## Antipatterns
 
 Allgemein: das verwenden der falschen Elemente
 
@@ -365,10 +414,18 @@ Note:
 
 ----
 
+### Picture Element
+
+Note:
+- entstanden aus Polyfill
+----
+
 ### Word Break Opportunities
 
 Note:
 - vermisst von LateX her
+- &shy; viel schöner
+- bleibt die Frage, wie Autoren dies gut eingeben können
 ---
 
 ## Links
