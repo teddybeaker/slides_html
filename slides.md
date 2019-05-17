@@ -36,6 +36,8 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 ### Agenda
 
+<!-- TODO Bezug zu SPAs mehr einbauen, nochmals mit Abstract abgleichen -->
+
 - Einleitung
 - Grundlagen
 - Antipatterns

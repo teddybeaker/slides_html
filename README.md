@@ -36,7 +36,8 @@ _Bereich abgeschlossen nach total X Minuten_
 
 ### Titel
 
-HTML, das Wichtigste für Nicht-Frontender
+Markup-Tipps für Backender
+
 
 ### Bio
 
@@ -46,6 +47,40 @@ Ich arbeite bei Bluesky IT-Solutions in Basel, vorwiegend in der Frontend-Entwic
 
 ### Abstract
 
-Wer genügend Zeit hat die Spezifikationen und die Dokumentationen von allen Technologien zu lesen, kann sich glücklich schätzen. Dieser Vortrag enthält Tipps für Entwickler, die neu in HTML entwickeln. HTML ist eine vielseitige Markup-Sprache und kann einem das Entwicklerleben erleichtern; wenn sie richtig angewendet wird.
+Immer mehr Leute, die nicht direkt aus der Webentwicklung kommen, entwickeln Single Page Applications (SPAs). HTML ist eine vielseitige Markup-Sprache, die sich in den Jahren ihrer Existenz stark entwickelt hat und viel mächtiger geworden ist. Dennoch haben nicht alle Zeit und Motivation die ganzen Spezifikationen und Dokumentation zu lesen. Und so kommt es, dass ich immer wieder auf Beispiele stosse, die mir Tränen in die Augen treiben und zu vermeidbaren Problemen führen.
 
-In diesem Vortrag werde ich zuerst einige Grundlagen vermitteln. Danach gehe ich auf Beispiele ein, die mir die Tränen in die Augen treiben und zeige auf, wie es besser geht. Zuletzt werde ich ein paar weniger bekannte HTML-Elemente vorstellen, deren Verwendung die eine oder andere Thirdparty Library ersetzen kann.
+Was ist wichtig zu wissen über HTML? Was macht die Entwicklung einfacher und das resultierende Produkt stabiler? In meinem Vortrag gebe ich euch wichtige Inputs dazu, die ganz nebenbei auch der Benutzbarkeit, Wartbarkeit und Erweiterbarkeit des Produkts dienen. Des Weiteren stelle ich euch ein paar weniger bekannte HTML5-Elemente vor, deren Verwendung die eine oder andere Thirdparty Library ersetzen kann.
+
+
+#### Entwurf 2 - Eve
+
+Immer mehr Leute, die nicht direkt aus der Webentwicklung herkommen, entwickeln - manchmal auch notgedrungen - Single Page Applications (SPAs). HTML ist eine vielseitige Markup-Sprache, die sich in den Jahren ihrer Existenz stark entwickelt hat und viel mächtiger geworden ist. Dennoch haben nicht alle Zeit und Motivation die ganzen Spezifikationen und Dokumentation einer Sprache zu lesen. Und so kommt es dazu, dass ich immer wieder auf Beispiele stosse, die mir Tränen in die Augen treiben und schlichtweg zu Problemen führen.
+
+In meinem Vortrag gebe ich euch wichtige Inputs, die das Entwickeln einfacher machen und ganz nebenbei der Benutzbarkeit, Wartbarkeit und Erweiterbarkeit der SPA dienen. Desweiteren stelle ich euch ein paar weniger bekannte HTML-Elemente vor, deren Verwendung die eine oder andere Thirdparty Library ersetzen kann.
+
+#### Entwurf 2.1 Eve provokativ
+
+"HTML kann doch jedes Kind!” Wieso treffe ich dennoch immer wieder auf Beispiele in Single Page Applications (SPAs) die mir Tränen in die Augen treiben? HTML ist eine vielseitige Markup-Sprache, die sich in den Jahren ihrer Existenz stark entwickelt hat. Mit ein bisschen fundiertem Wissen könnte man ein paar Fehler in Punkto Benutzbarkeit, Wartbarkeit und Erweiterbarkeit vermeiden. Gerade wenn man nicht direkt aus der Webentwicklung herkommt.  
+
+In meinem Vortrag gebe ich euch wichtige Inputs, die das Entwickeln einfacher machen und ganz nebenbei der Stabilität der SPA dienen. Desweiteren stelle ich euch ein paar weniger bekannte HTML-Elemente vor, deren Verwendung die eine oder andere Thirdparty Library ersetzen kann.
+
+#### Entwurf 1
+
+Single Page Applications (SPAs) ermöglichen neue Entwicklungsmöglichkeiten. Sie basieren immer noch auf HTML, einer Technologie mit einer langen Geschichte.
+
+Ich sehe immer mehr Leute SPAs entwickeln, deren Hintergrund nicht in der Webentwickung ist. Was ist wichtig zu wissen über HTML? Was macht die Entwicklung einfacher und das resultierende Produkt stabiler? Auf diese Fragen werde ich in diesem Vortrag eingehen.
+
+
+### Feedback
+#### Kritik
+- zu langweilig
+- HTML kommt niemand schauen, weil alle denken, dass sie HTML schon können
+
+#### Vorschläge
+- HTML -> HTLM5
+- Bezug auf SPAs
+- Titel _Frontend-Tipps für Backender_
+
+#### meine Entscheide
+- will HTML nicht nach HTML5 umbenennen, weil ich nicht spezifisch auf die neusten Features eingehe sondern generell über HTML rede. Auch gibt es HTML5 schon seit 2014, ist also nicht neu und hip
+- will nicht _Frontend-Tipps_ im Titel, beziehe mich nur auf Markup, nicht auf CSS, JS, Performance, Browser-compliance, Barrierefreiheit, etc.
