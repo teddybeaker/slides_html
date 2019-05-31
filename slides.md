@@ -1,4 +1,4 @@
-# HTML: das Wichtigste für Nicht-Frontender
+# Markup-Tipps für Backender
 
 Stefani Gerber, 17. Oktober 2019 BaselOne
 
@@ -9,8 +9,6 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
   - was sehe ich oft falsch gemacht
 
   Publikum: Backendentwickler
-  Titelvorschläge:
-  - HTML, das Wichtigste für Nicht-Frontender
 -->
 
 <!-- Checkliste vor dem Talk
@@ -30,16 +28,10 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 ----
 
-## Einleitung
-
-----
-
 ### Agenda
 
-<!-- TODO Bezug zu SPAs mehr einbauen, nochmals mit Abstract abgleichen -->
-
 - Einleitung
-- Grundlagen
+- Wichtige Begriffe
 - Antipatterns
 - Eigenimplementationen
 - Tolle Beispiele
@@ -54,10 +46,15 @@ Frontend Engineer bei Bluesky IT-Solutions in Basel
 
 Note:
 - 14 Jahre Entwicklung, hauptsächlich Frontend
+- mache etwas Backend (SpringBoot)
+- sehe viele Entwicklerinnen in der umgekehrten Rolle
+- > Aus großer Kraft folgt grosse Verantwortung.
 
 ----
 
-### Don't do weird things
+> Don't do weird things
+> <br>
+> -- <cite>John Lash</cite>
 
 Note:
 - Habe lange Tai Chi gemacht
@@ -71,9 +68,9 @@ Note:
 
 ### Der Preis von schlechtem HTML
 
-- fehleranfälliger
-- schwieriger zu stylen
-- erschwertes Verständnis für andere Entwickler
+- fehleranfällig
+- schwierig zu stylen
+- schlecht verständlich für andere Entwickler
 - erschwert automatisiertes Testing
 
 Note:
@@ -82,8 +79,6 @@ Note:
 ----
 
 ### Spezifikation
-
-<!-- TODO add image of multiple standards XKCD -->
 
 - W3C: <https://www.w3.org/TR/html52/>
 - WhatWG: <https://html.spec.whatwg.org>
@@ -95,7 +90,7 @@ Note:
 
 ---
 
-## Grundlagen
+## Wichtige Begriffe
 
 Note:
 - um sicherzustellen, dass wir vom selben reden
@@ -121,7 +116,8 @@ Note:
 - DOCTYPE für Version, HTML5 wenn immer möglich
 - language -> hilft Browsern, beim übersetzen und Screenreadern beim vorlesen
 - charset: erstes Element in head wegen parsen des Dokuments
-- Titel nicht leer (Body darf lustigerweise schon leer sein TODO wieso?)
+- Titel nicht leer
+- Body darf leer sein (weil evtl. per JS gefüllt?)
 
 ----
 
@@ -155,20 +151,28 @@ Note:
 - einige haben Default-Verhalten
 
 Note:
-TODO
-- Beispielabfolge
-- gibt es bei Formularen noch was anderes als reset und submit? Z.B. Files im Hintergrund hochladen? -> Non-standard https://developer.mozilla.org/en-US/docs/Web/Events
+- bubblen von Kind zu Parent
+- Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
+- Beispielabfolge (keydown, keypress, keyup)
+- gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
 - https://eloquentjavascript.net/15_event.html
 - https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events
+- https://developer.mozilla.org/en-US/docs/Web/Events#Form_events
 
 ----
 
 ### Barrierefreiheit
 
-<!-- TODO Definition suchen -->
 >  kann von allen genutzt und wahrgenommen werden
 
-assistive Technologien
+<!--Prinzipen
+- wahrnehmbar
+- bedienbar
+- verständlich
+- robust-->
+
+mithilfe von assistiven Technologien
 
 Note:
 - auf Englisch Accessiblity
@@ -214,7 +218,6 @@ Note:
 
 ### Buttons und Links
 
-<!-- TODO bessere Defintion finden, was die Elemente können -->
 Klickt man, und dann passiert etwas
 - Link: springt auf eine andere Seite
 - Button: löst eine Aktion aus
@@ -239,8 +242,6 @@ Note:
 <a href="http://baselone.ch">richtig so</a>
 <a href="http://baselone.ch"><img src="logo.svg"></a>
 ```
-
-<!-- TODO einen Weg finden, um falsches durchzustreichen -->
 
 Note:
 - Zusatzinformationen gehen verloren
@@ -327,7 +328,16 @@ Note:
 
 ----
 
-### Demo
+### Demo ...
+
+> ... select sieht Sch* aus und passt nicht in unser Design
+
+Note:
+- analysieren wir mal, was die Kosten für ein reines Styling sind
+
+----
+
+#### Analyse existierendes HTML Element
 
 Note:
 - Select kann
@@ -345,24 +355,7 @@ Note:
 
 ----
 
-### aber ...
-
-> ... select sieht Sch* aus und passt nicht in unser Design
-
-<!-- TODO finde bessere Formulierung als Tradeoff -->
-Tradeoff
-- Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
-- in allen Browsern
-- Performance-Einbusse
-
-Note:
-- Ist in der Spez seit (TODO nachschauen)
-- Ländereingabe -> Switzerland -> Kann nicht tippen *aaaaah*
-
-
-----
-
-### Beispiel
+#### Beispiel
 
 <https://material.angular.io/components/select/overview>
 
@@ -370,6 +363,18 @@ Note:
 - Angular Material gewählt, weil ich viel damit zu tun habe
 - eigenes Markup
 - offenes Dropdown in CDK-Layer, ganz unten in DOM
+
+----
+
+#### Fazit
+
+- Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
+- in allen Browsern
+- Performance-Einbusse
+
+Note:
+- Ist in der Spez mindestens seit HTML 2.0 1995, denke eher seit HTML 1.0, aber konnte ich nicht finden
+- Ländereingabe -> Switzerland -> Kann nicht tippen *aaaaah*
 
 ----
 
@@ -396,6 +401,11 @@ Note:
 
 ### Details
 
+<details>
+ <summary>Zusammenfassung</summary>
+ <p>Hier stehen die ganzen Details</p>
+</details>
+
 Note:
 - all die jQuery-Accordeon
 
@@ -403,6 +413,7 @@ Note:
 
 ### Dialog
 
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Result>
 Note:
 - wichtig, wie der Fokus gehandhabt wird
 

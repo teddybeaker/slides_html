@@ -34,6 +34,18 @@
       document.querySelector('#eventSource').addEventListener('click', () => console.log('click event triggered'));
     </script>
 
+    <form>
+      <input id="events">
+    </form>
+    <script>
+    const eventInput = document.querySelector('#events');
+    eventInput.addEventListener('keydown', (e) => console.log('keydown', e));
+    eventInput.addEventListener('keypress', (e) => console.log('keypress (deprecated)', e));
+    eventInput.addEventListener('keyup', (e) => console.log('keyup', e));
+    eventInput.addEventListener('input', (e) => console.log('input', e));
+    eventInput.addEventListener('change', (e) => console.log('change', e));
+    </script>
+
     <h2>Eigenimplementaitionen</h2>
     <select>
       <option>Basel</option>
