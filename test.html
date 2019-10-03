@@ -10,22 +10,19 @@
 
     <h3>Buttons und Links</h3>
 
+    <h4>Button sollte ein Link sein</h4>
     <!-- falsch -->
     <button onclick="location.href='http://baselone.ch'">
       ich wäre besser ein Link
     </button>
 
+    <h4>Link</h4>
     <!-- richtig -->
     <a href="http://baselone.ch">richtig so</a>
 
+    <h4>Link sollte ein Button sein</h4>
     <form class="formToSubmit" action="index.html" method="post">
-      <a href="" id="buttonImpersonator">ich wäre besser ein Button</a>
-      <script>
-        document.querySelector('#buttonImpersonator')
-          .addEventListener('click',
-            () => document.querySelector('.formToSubmit').submit()
-          );
-      </script>
+      <a href="" onclick="event.preventDefault();document.querySelector('.formToSubmit').submit();">ich wäre besser ein Button</a>
     </form>
 
     <!-- welche Events triggert der Button? -->
@@ -46,7 +43,13 @@
     eventInput.addEventListener('change', (e) => console.log('change', e));
     </script>
 
-    <h2>Eigenimplementaitionen</h2>
+    <h2>Weird divs</h2>
+    <form onsubmit="alert('form submitted')">
+      <input type="text" />
+      <button type="submit">Send</button>
+    </form>
+
+    <h2>Eigenimplementationen</h2>
     <select>
       <option>Basel</option>
       <option disabled>Zürich</option>

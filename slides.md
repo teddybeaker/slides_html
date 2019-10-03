@@ -1,3 +1,12 @@
+---
+title: Markup-Tipps für Backender
+theme: theme/bluesky-dark.css
+css: css/font-awesome.min.css,css/bluesky-it.css
+---
+<base target="_blank">
+
+<!-- .slide: data-background="./images/background.jpg" -->
+<!-- .slide: class="slide-title" -->
 # Markup-Tipps für Backender
 
 Stefani Gerber, 17. Oktober 2019 BaselOne
@@ -13,6 +22,8 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 <!-- Checkliste vor dem Talk
   - Little Snitch abgestellt
+  - Clipboard-History geleert
+  - Browser: pinned tabs geschlossen
   - Genügend Strom
   - Leinwand
     - funktioniert
@@ -20,15 +31,9 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
     - Schriftgrösse
 -->
 
-<!-- TODO
-  - Style Slides
-  - welchen Browser verwenden?
-  - Beispiele: Inline, Wechsel in Tabs, Wechsel in total anderes Fenster? Links in Slides, falls ich ein fixes Set an Tabs öffnen kann?
--->
-
 ----
 
-### Agenda
+### Agenda ☑️
 
 - Einleitung
 - Wichtige Begriffe
@@ -90,10 +95,23 @@ Note:
 
 ---
 
-## Wichtige Begriffe
+## Wichtige Begriffe 💡
 
 Note:
 - um sicherzustellen, dass wir vom selben reden
+
+----
+
+### HTML vs DOM
+
+- *HTML*: Markup Sprache um DOM darzustellen
+- *DOM*: Dokumentenmodell mit zugehörigem API
+
+Note:
+- In Browser zeigen (view source, DevTools)
+  - Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
+- property (HTML) vs attribute (DOM)
+- DOM kann sich ändern, ohne dass es in HTML reflektiert wird
 
 ----
 
@@ -121,23 +139,10 @@ Note:
 
 ----
 
-### HTML vs DOM
-
-- HTML: Markup Sprache um DOM darzustellen
-- DOM: Dokumentenmodell mit zugehörigem API
-
-Note:
-- In Browser zeigen (view source, DevTools)
-  - Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
-- property (HTML) vs attribute (DOM)
-- DOM kann sich ändern, ohne dass es in HTML reflektiert wird
-
-----
-
 ### Tags
 
 - Elemente in HTML
-- z.T. eigenständig, z.T. in Kontext
+- eigenständig versus in Kontext [&lt;option&gt;](https://www.w3.org/TR/html52/sec-forms.html#the-option-element)
 
 Note:
 - Dokumentation zeigen, z.B. <input>, das nur im Form Sinn macht
@@ -164,15 +169,8 @@ Note:
 
 ### Barrierefreiheit
 
->  kann von allen genutzt und wahrgenommen werden
-
-<!--Prinzipen
-- wahrnehmbar
-- bedienbar
-- verständlich
-- robust-->
-
-mithilfe von assistiven Technologien
+- kann von allen genutzt und wahrgenommen werden
+- mithilfe von assistiven Technologien
 
 Note:
 - auf Englisch Accessiblity
@@ -184,31 +182,31 @@ Note:
 - viel kommt schon von selber mit, wenn man das HTML richtig braucht
 - Tipp von ARIA, ARIA möglichst nicht zu verwenden (TODO raussuchen)
 
+Prinzipen
+- wahrnehmbar
+- bedienbar
+- verständlich
+- robust
+
 ----
-
+<!-- .slide: class="block-vs-inline" -->
 ### block vs inline
-
-<!-- TODO
-  - Beispiel zeigen, grafisch
-  - zeigen, wie man in Doku nachschaut
-  - TODO evtl. mit div/span zusammenziehen? -->
 relevant beim Verschachteln von Elementen
+
+<div class="wrapper fragment">
+  <div class="block">block</div>
+  <span class="inline">inline<span>
+  <div class="block">block</div>
+</div>
 
 Note:
 - betrifft Darstellung und somit ausserhalb des Scopes von diesem Talk
 - trotzdem erwähnt, weil es später beim stylen viel Mühe spart, wenn im Markup schon sinnvoll gewählt
+- mdn inline-elements
 
 ---
 
-## Antipatterns
-
-Allgemein: das verwenden der falschen Elemente
-
--> sematisches HTML
-
-> Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation.
-
-Source: <https://www.lifewire.com/why-use-semantic-html-3468271>
+## Antipatterns 😡
 
 Note:
 - das verwenden von den falschen Elementen (es gibt andere / bessere)
@@ -216,11 +214,20 @@ Note:
 
 ----
 
-### Buttons und Links
+### Semantisches HTML
+
+> Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation.
+
+Quelle: <https://www.lifewire.com/why-use-semantic-html-3468271>
+
+----
+<!-- .slide: class="slide-buttons-vs-links" -->
+
+### Buttons vs Links
 
 Klickt man, und dann passiert etwas
-- Link: springt auf eine andere Seite
-- Button: löst eine Aktion aus
+-  <a href="#/2/1">link</a>: springt auf eine andere Seite
+- <button type="button" onclick="alert('Hallo Welt');">button</button>: löst eine Aktion aus
 
 Note:
 - nicht vermischen
@@ -233,15 +240,18 @@ Note:
 #### Weird buttons
 
 ```
-<!-- falsch -->
+<!-- falsch 👿 -->
 <button onclick="location.href='http://baselone.ch'">
   ich wäre besser ein Link
 </button>
 
-<!-- richtig -->
+<!-- richtig 👼 -->
 <a href="http://baselone.ch">richtig so</a>
 <a href="http://baselone.ch"><img src="logo.svg"></a>
 ```
+<button class="hidden-unless-questioned" onclick="location.href='http://baselone.ch'">
+  ich wäre besser ein Link
+</button>
 
 Note:
 - Zusatzinformationen gehen verloren
@@ -253,38 +263,47 @@ Note:
 #### Weird links
 
 ```
-<!-- falsch -->
-<a href="" id="buttonImpersonator">ich wäre besser ein Button</a>
+<!-- falsch 👿 -->
+<a href="" onclick="/*Aktion*/">ich wäre besser ein Button</a>
+
+<!-- richtig 👼 -->
+<button id="some-action">richtig so</button>
 <script>
-  document.querySelector('#buttonImpersonator')
-    .addEventListener('click', // hier wird die Aktion ausgeführt);
+  document.querySelector('#some-action')
+    .addEventListener('click', () => { /* Action */ } );
 </script>
 ```
+<form class="hidden-unless-questioned" action="index.html" method="post">
+  <a href="" onclick="event.preventDefault();document.querySelector('.formToSubmit').submit();">ich wäre besser ein Button</a>
+</form>
 
 Note:
 - habe ich in letzter Zeit weniger gesehen, war aber eine zeitlang recht angesagt
 
 ----
+<!-- .slide: class="slide-focus" -->
 
 ### Focus
 
-- Buttons, links
-- Form-Elemente
+- <button>Button</button>, <a href="https://baselone.ch">link</a>
+- Form-Elemente <input placeholder="Name"> <select><option>1</option><option>2</option></select>
 - alles mit keyindex!=-1
 
 Note:
 - alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
 - nicht grafisch ausblenden
+- FF https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox
 
 ----
 
 ### div, span
 
-> The div element has *no special meaning at all*. It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
+> The div element has *no special meaning at all*.
 
-> Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable.
+Quelle: https://www.w3.org/TR/html52/grouping-content.html#the-div-element
 
 Note:
+- It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
 - Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
 
 ----
@@ -292,6 +311,7 @@ Note:
 #### Weird divs
 
 ```
+  <!-- falsch 👿 -->
   <div onclick="tueIrgendwas()">Inhalt</div>
 ```
 
@@ -301,13 +321,31 @@ Note:
 ----
 
 #### Weird forms
+<!-- .slide: class="slide-weird-forms" -->
 
 ```
+  <!-- falsch 👿 -->
   <div>
     <input type="text" />
     <button onclick="sendTheFormSomehow()">Send</button>
   </div>
+
+  <!-- richtig 👼 -->
+  <form onsubmit="sendTheFormSomehow()">
+    <input type="text" />
+    <button type="submit">Send</button>
+  </form>
 ```
+<div class="hidden-unless-questioned">
+  <form action="/action_page.php" method="get">
+    <input type="text" />
+    <button type="submit">Send</button>
+  </form>
+  <form onsubmit="sendTheFormSomehow()">
+    <input type="text" />
+    <button type="submit">Send</button>
+  </form>
+</div>
 
 Note:
 - kein form-Tag
@@ -316,7 +354,7 @@ Note:
 
 ---
 
-## Eigenimplementationen
+## Eigenimplementationen 👷‍♀️
 
 wenn es das Element nicht gibt, das man braucht
 
@@ -325,19 +363,24 @@ Note:
   - existiert nicht
   - funktioniert nicht wie man es möchte
   - sieht nicht aus wie gewollt
-
-----
-
-### Demo ...
-
-> ... select sieht Sch* aus und passt nicht in unser Design
-
-Note:
 - analysieren wir mal, was die Kosten für ein reines Styling sind
 
 ----
+<!-- .slide: class="slide-select" -->
 
 #### Analyse existierendes HTML Element
+
+<select>
+  <option>1</option>
+    <option>2</option>
+  <optgroup label="zwanziger">
+    <option>21</option>
+    <option>22</option>
+  </optgroup>
+  <optgroup label="Rest">
+    <option>42</option>
+  </optgroup>
+</select>
 
 Note:
 - Select kann
@@ -350,8 +393,7 @@ Note:
     - Space-Taste
     - Navigieren mit Cursor
     - Textsuche
-    - Auswahl mit Space oder Enter
-- Shadow DOM zeigen, TODO rausfinden, wie ich Styles manipulieren kann
+    - Auswahl mit Space? oder Enter
 
 ----
 
@@ -378,24 +420,40 @@ Note:
 
 ----
 
-### WebComponents / Custom Elements
+### WebComponents
+- Standard
+- wiederverwendbar
 
-- vorhin gesehen in Angular DEMO
-
-<!-- TODO richtige Terminologie finden -->
+Note:
+- bzw. Set von Standards
+- wiederverwendbar im Sinn von mit anderen Technologien als mit der Ersteller
 
 ---
 
-## Tolle Beispiele
+## Tolle Beispiele 🥰
 
 
 ----
 
 ### HTML5 Inputs
+<!-- .slide: class="slide-html-inputs" -->
+
+```
+<input type="text|number|color|tel">
+```
 
 - neue Typen
-- spezielle Keyboard-Unterstütung (z.B. für Zahlen)
+- spezielle Keyboard-Unterstützung (z.B. für Zahlen)
 - Vorvalidierung
+
+<div class="wrapper fragment">
+  <label>Color <input type="color"></label><br>
+  <label>Range <input type="range"></label>
+</div>
+
+
+Note:
+- über 20 types
 
 ----
 
@@ -413,13 +471,18 @@ Note:
 
 ### Dialog
 
-<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Result>
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Examples>
+
 Note:
 - wichtig, wie der Fokus gehandhabt wird
+  - wo ist er, wenn geöffnet
+- schliessen mit esc
 
 ----
 
-### Data-list
+### Datalist
+
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist#Examples>
 
 Note:
 - unterstützt den Benutzer bei der Eingabe
@@ -428,12 +491,24 @@ Note:
 ----
 
 ### Picture Element
+<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture>
 
 Note:
 - entstanden aus Polyfill
+- Selektiv Bilder anzeigen basierend auf Viewport
+- neue Bildformate -> Fallback für alte Browser
+
 ----
 
 ### Word Break Opportunities
+<!-- .slide: class="slide-word-break-opportunities" -->
+
+```
+<p>Pippi Langstrumpf kommt aus dem Taka&shy;tukaland</p>
+```
+
+<div lang="de" class="narrow-container fragment">ohne: Takatukaland</div>
+<div lang="de" class="narrow-container fragment">mit: Taka&shy;tukaland</div>
 
 Note:
 - vermisst von LateX her
@@ -443,11 +518,11 @@ Note:
 
 ## Links
 
-- DevTips <https://umaar.com/dev-tips/>
 - MDN <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details>
 - w3Schools <https://www.w3schools.com/tags/tag_details.asp>
 - can I use <https://caniuse.com>
 - Spec <https://www.w3.org/TR/html52/>, <https://html.spec.whatwg.org>
+- DevTips <https://umaar.com/dev-tips/>
 
 Note:
 - wie verwendet

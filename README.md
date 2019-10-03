@@ -23,14 +23,32 @@ _npm install -g reveal-md_
 `reveal-md slides.md --print slides.pdf`
 
 
-## Timing 28.3.2019
+## Probeläufe
 _Bereich abgeschlossen nach total X Minuten_
 
 
+### Timing 28.3.2019
 - Einführung und Grundlagen: 12min
 - Weird Things: 25min
 - Eigenimplementationen: 30min
 - Tolle Beispiele: 38min
+
+### Timing 3.10.2019
+- Weird Things: 25min
+- Tolle Beispiele: 54min
+
+### Fragen an Eve
+- worauf achten
+  - roter Faden erkennbar?
+  - fehlen Illustrationen?
+
+- Agenda
+  - allgemein bessere
+  - `Wichtige Begriffe -> `Grundlagen`? Oder ist das abwertend?
+
+### TODO
+- Wie kann ich Font in Dev-Tools vergrössern?
+- Suche Story über owner vom Link-Tag.
 
 ## Call for Paper
 

@@ -1,0 +1,92 @@
+/* Bluesky colors
+ * red: #a81430, rgba(168,20,48,0.85)
+ * blue: rgba(70,110,160,0.7)
+ * grey (font): #646464
+ */
+
+/** generic */
+li {
+  list-style: none;
+  text-indent: -.9em;
+}
+
+li::before {
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 0.5em;
+}
+
+button {
+  font-size: 42px;
+}
+
+.hidden-unless-questioned {
+  display: none;
+}
+
+/** slide specific styles */
+
+.slide-title,
+.slide-title h1 {
+  color: rgba(168,20,48,0.85);
+
+}
+
+.slide-title h1 {
+  text-shadow: 1px 2px #646464;
+}
+
+.block-vs-inline .wrapper {
+  width: 200px;
+  text-align: left;
+  color: black;
+  background-color: #646464;
+}
+
+.block-vs-inline .block {
+  background-color: rgba(70,110,160,0.7);
+}
+
+.block-vs-inline .inline {
+  background-color: rgba(168,20,48,0.85);
+}
+
+.slide-buttons-vs-links button {
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.slide-focus *:focus {
+  outline: 3px solid yellow;
+}
+
+.slide-focus input {
+  font-size: 20px;
+}
+.slide-focus select {
+  font-size: 30px;
+}
+
+.slide-weird-forms button {
+  font-size: 20px;
+}
+
+.slide-select select {
+  font-size: 32px;
+}
+
+.slide-html-inputs .wrapper {
+  width: 200px;
+  margin-top: 24px;
+  font-size: 16px;
+  color: black;
+  text-align: left;
+  background-color: #646464;
+}
+
+.slide-word-break-opportunities .narrow-container {
+  background-color: #646464;
+  display: inline-block;
+  width: 5em;
+  hyphens: auto;
+}
