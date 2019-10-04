@@ -81,6 +81,13 @@ _Bereich abgeschlossen nach total X Minuten_
 -   Weird Things: 25min
 -   Tolle Beispiele: 54min
 
+### Timing 4.10.2019
+-   Einleitung: 7min
+-   Begriffe: 18min
+-   Antipattern: ?
+-   Eigenimplementationen: Antipattern +6min
+-   Tolle Beispiele: Antipattern +17min
+
 ### Fragen an Eve
 -   worauf achten
     -   roter Faden erkennbar?

@@ -71,10 +71,7 @@ Note:
 -   WhatWG: <https://html.spec.whatwg.org>
 
 Note:
-> This specification should be read like all other specifications. First, it should be read cover-to-cover, multiple times. Then, it should be read backwards at least once. Then it should be read by picking random sections from the contents list and following all the cross-references.
-
--   habe ein bisschen Angst, dass sie es ernst meinen
--   Hier ein paar Punkte, von jemandem, der sie wenigstens einmal cover-to-cover gelesen hat.
+-   dass es zwei gibt ist historisch bedingt, beinhalten dasselbe
 
 
 ---
@@ -88,13 +85,13 @@ Note:
 
 ### HTML vs DOM
 
--   _HTML_: Markup Sprache um DOM darzustellen
+-   _HTML_: Markup Sprache um Dokumente im Web darzustellen
 -   _DOM_: Dokumentenmodell mit zugehörigem API
 
 Note:
+-   DOM: Document Object Model
 -   In Browser zeigen (view source, DevTools)
     -   Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
--   property (HTML) vs attribute (DOM)
 -   DOM kann sich ändern, ohne dass es in HTML reflektiert wird
 
 ----
@@ -485,22 +482,6 @@ Note:
 -   Selektiv Bilder anzeigen basierend auf Viewport
 -   neue Bildformate -> Fallback für alte Browser
 
-----
-
-### Word Break Opportunities
-<!-- .slide: class="slide-word-break-opportunities" -->
-
-```
-<p>Pippi Langstrumpf kommt aus dem Taka&shy;tukaland</p>
-```
-
-<div lang="de" class="narrow-container fragment">ohne: Takatukaland</div>
-<div lang="de" class="narrow-container fragment">mit: Taka&shy;tukaland</div>
-
-Note:
--   vermisst von LateX her
--   &shy; viel schöner
--   bleibt die Frage, wie Autoren dies gut eingeben können
 
 ---
 
@@ -516,3 +497,7 @@ Note:
 -   wie verwendet
 -   welche Attribute
 -   Browser Support
+
+----
+
+### Danke für's Zuhören 🙋‍♀️
