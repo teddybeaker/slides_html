@@ -3,33 +3,13 @@ title: Markup-Tipps für Backender
 theme: theme/bluesky-dark.css
 css: css/font-awesome.min.css,css/bluesky-it.css
 ---
-<base target="_blank">
+<base target="\_blank">
 
 <!-- .slide: data-background="./images/background.jpg" -->
 <!-- .slide: class="slide-title" -->
 # Markup-Tipps für Backender
 
 Stefani Gerber, 17. Oktober 2019 BaselOne
-
-<!-- Ziel
-  - was muss man über HTML wissen?
-  - low-hanging fruits
-    - wie vermeidet man viel Arbeit, wenn man von Anfang an das richtige Markup verwendet
-  - was sehe ich oft falsch gemacht
-
-  Publikum: Backendentwickler
--->
-
-<!-- Checkliste vor dem Talk
-  - Little Snitch abgestellt
-  - Clipboard-History geleert
-  - Browser: pinned tabs geschlossen
-  - Genügend Strom
-  - Leinwand
-    - funktioniert
-    - Helligkeit
-    - Schriftgrösse
--->
 
 ----
 
@@ -180,7 +160,9 @@ Note:
   - Joystick für motorisch behinderte Menschen
 - parsen von Webseiten
 - viel kommt schon von selber mit, wenn man das HTML richtig braucht
-- Tipp von ARIA, ARIA möglichst nicht zu verwenden (TODO raussuchen)
+- First Rule of ARIA Use: ARIA möglichst nicht verwenden <https://www.w3.org/TR/using-aria/#>
+  > First Rule of ARIA Use
+If you can use a native HTML element [HTML51] or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 
 Prinzipen
 - wahrnehmbar
@@ -218,7 +200,7 @@ Note:
 
 > Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation.
 
-Quelle: <https://www.lifewire.com/why-use-semantic-html-3468271>
+<span class="source">Quelle: <https://www.lifewire.com/why-use-semantic-html-3468271></span>
 
 ----
 <!-- .slide: class="slide-buttons-vs-links" -->
@@ -292,7 +274,7 @@ Note:
 Note:
 - alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
 - nicht grafisch ausblenden
-- FF https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox
+- FF <https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox>
 
 ----
 
@@ -300,7 +282,7 @@ Note:
 
 > The div element has *no special meaning at all*.
 
-Quelle: https://www.w3.org/TR/html52/grouping-content.html#the-div-element
+<span class="source">Quelle: <https://www.w3.org/TR/html52/grouping-content.html#the-div-element></span>
 
 Note:
 - It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
@@ -394,6 +376,7 @@ Note:
     - Navigieren mit Cursor
     - Textsuche
     - Auswahl mit Space? oder Enter
+  - Werte so abspeichern, dass sie onSubmit ausgelesen werden
 
 ----
 

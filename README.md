@@ -1,26 +1,64 @@
 # slides_html
-Presentation on HTML
+Präsentation über HTML
 
-Author: Stefani Gerber
+Autorin: Stefani Gerber
 
-## Install reveal-md:
+## Ziel
+-   was muss man über HTML wissen?
+-   low-hanging fruits
+  -   wie vermeidet man viel Arbeit, wenn man von Anfang an das richtige Markup verwendet
+  -   was sehe ich oft falsch gemacht
+
+Publikum: Backendentwickler
+
+## Präsentation - technisch
+Diese Präsentation funktioniert mit [reveal-md](https://github.com/webpro/reveal-md) (einer Markdown-Erweiterung von [reveal.js](https://github.com/hakimel/reveal.js/)).
+
+### reveal-md installieren
 _npm install -g reveal-md_
 
-## Show slides:
+### Präsentieren
 -   `reveal-md slides.md`
--   for author's view press `s` (in browser window)
--   press `esc` for overview
--   zoom using alt (option on mac) + click
--   pause using `b` or `.`
+-   Autorenansicht: `s` (im Präsentationsfenster im Browser)
+-   Übersicht: `esc`
+-   Zoom: `alt` (`option` on mac) + `click`
+-   Pause: `b` or `.`
 
-## Write slides:
--   using markdown (see <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet> for help)
--   separate slides using dashes
-    - 3 dashes `---` to start a new column (i.e. place the next slide to the right of the previous one)
-    - 4 dashes `----` to separate in same column (i.e. place the next slide below the previous one)
+### Folien erstellen
+-   mit markdown (siehe <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>)
+-   Folien separieren mit Bindestrichen
+    -   `reveal.js` ordnet Folien in einer Matrix an
+    -   3 Bindestriche `---` um eine neue Spalte zu starten (d.h. um die Folie rechts neben der vorherigen zu platzieren)
+    -   4 Bindestriche `----` um eine neue Folie in der selben Spalte anzulegen (d.h. um die neue Folie unterhalb der vorherigen zu platzieren)
+-   Speaker-Notes mit `Note:` auf den Folien einbinden -> sind in der Autorenansicht sichtbar
 
-## Export slides:
+### Folien exportieren
 `reveal-md slides.md --print slides.pdf`
+
+
+## Präsentation - organisatorisch
+
+### Checkliste Vorbereitung
+-   Weiternavigierungsdings
+-   Adapter
+-   Shortcuts auf Spickzettel
+
+### Checkliste vor dem Talk
+-   Wasser
+-   Little Snitch abgestellt
+-   Clipboard-History geleert
+-   Lautsprecher gemuted
+-   Browser -> Chrome
+    -   pinned tabs geschlossen
+    -   Bookmark-Bar ausgeblendet
+    -   Zoom in den Dev Tools ist einfach machbar (Keyboard auf Englisch wechseln, `command` + `+`)
+    -   Präsentation Fullscreen
+    -   Bildschirm-Wechsel zwischen Autorenansicht und Präsentation ist eingeübt
+-   Genügend Strom
+-   Leinwand
+    -   funktioniert
+    -   Helligkeit
+    -   Schriftgrösse
 
 
 ## Probeläufe
@@ -43,12 +81,8 @@ _Bereich abgeschlossen nach total X Minuten_
   - fehlen Illustrationen?
 
 - Agenda
-  - allgemein bessere
-  - `Wichtige Begriffe -> `Grundlagen`? Oder ist das abwertend?
-
-### TODO
-- Wie kann ich Font in Dev-Tools vergrössern?
-- Suche Story über owner vom Link-Tag.
+  - allgemein bessere Bezeichnungen?
+  - `Wichtige Begriffe` -> `Grundlagen`? Oder ist das abwertend?
 
 ## Call for Paper
 

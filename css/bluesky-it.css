@@ -24,6 +24,10 @@ button {
   display: none;
 }
 
+.source {
+  font-size: small;
+}
+
 /** slide specific styles */
 
 .slide-title,
