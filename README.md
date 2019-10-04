@@ -6,8 +6,8 @@ Autorin: Stefani Gerber
 ## Ziel
 -   was muss man über HTML wissen?
 -   low-hanging fruits
-  -   wie vermeidet man viel Arbeit, wenn man von Anfang an das richtige Markup verwendet
-  -   was sehe ich oft falsch gemacht
+    -   wie vermeidet man viel Arbeit, wenn man von Anfang an das richtige Markup verwendet
+    -   was sehe ich oft falsch gemacht
 
 Publikum: Backendentwickler
 
@@ -34,6 +34,12 @@ _npm install -g reveal-md_
 
 ### Folien exportieren
 `reveal-md slides.md --print slides.pdf`
+
+### Theming
+-   `reveal.js` selber ausgecheckt und eigenes Theme (basierend auf `dark`) erstellt mit den Farben von Bluesky > `theme/bluesky-dark.css`
+
+### Styling
+-   siehe `css/bluesky-it.css`
 
 
 ## Präsentation - organisatorisch
@@ -66,23 +72,23 @@ _Bereich abgeschlossen nach total X Minuten_
 
 
 ### Timing 28.3.2019
-- Einführung und Grundlagen: 12min
-- Weird Things: 25min
-- Eigenimplementationen: 30min
-- Tolle Beispiele: 38min
+-   Einführung und Grundlagen: 12min
+-   Weird Things: 25min
+-   Eigenimplementationen: 30min
+-   Tolle Beispiele: 38min
 
 ### Timing 3.10.2019
-- Weird Things: 25min
-- Tolle Beispiele: 54min
+-   Weird Things: 25min
+-   Tolle Beispiele: 54min
 
 ### Fragen an Eve
-- worauf achten
-  - roter Faden erkennbar?
-  - fehlen Illustrationen?
+-   worauf achten
+    -   roter Faden erkennbar?
+    -   fehlen Illustrationen?
 
-- Agenda
-  - allgemein bessere Bezeichnungen?
-  - `Wichtige Begriffe` -> `Grundlagen`? Oder ist das abwertend?
+-   Agenda
+    -   allgemein bessere Bezeichnungen?
+    -   `Wichtige Begriffe` -> `Grundlagen`? Oder ist das abwertend?
 
 ## Call for Paper
 
@@ -125,14 +131,14 @@ Ich sehe immer mehr Leute SPAs entwickeln, deren Hintergrund nicht in der Webent
 
 ### Feedback
 #### Kritik
-- zu langweilig
-- HTML kommt niemand schauen, weil alle denken, dass sie HTML schon können
+-   zu langweilig
+-   HTML kommt niemand schauen, weil alle denken, dass sie HTML schon können
 
 #### Vorschläge
-- HTML -> HTLM5
-- Bezug auf SPAs
-- Titel _Frontend-Tipps für Backender_
+-   HTML -> HTLM5
+-   Bezug auf SPAs
+-   Titel _Frontend-Tipps für Backender_
 
 #### meine Entscheide
-- will HTML nicht nach HTML5 umbenennen, weil ich nicht spezifisch auf die neusten Features eingehe sondern generell über HTML rede. Auch gibt es HTML5 schon seit 2014, ist also nicht neu und hip
-- will nicht _Frontend-Tipps_ im Titel, beziehe mich nur auf Markup, nicht auf CSS, JS, Performance, Browser-compliance, Barrierefreiheit, etc.
+-   will HTML nicht nach HTML5 umbenennen, weil ich nicht spezifisch auf die neusten Features eingehe sondern generell über HTML rede. Auch gibt es HTML5 schon seit 2014, ist also nicht neu und hip
+-   will nicht _Frontend-Tipps_ im Titel, beziehe mich nur auf Markup, nicht auf CSS, JS, Performance, Browser-compliance, Barrierefreiheit, etc.

@@ -5,6 +5,8 @@ css: css/font-awesome.min.css,css/bluesky-it.css
 ---
 <base target="\_blank">
 
+<!--lint disable rule-style-->
+
 <!-- .slide: data-background="./images/background.jpg" -->
 <!-- .slide: class="slide-title" -->
 # Markup-Tipps für Backender
@@ -15,11 +17,11 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 ### Agenda ☑️
 
-- Einleitung
-- Wichtige Begriffe
-- Antipatterns
-- Eigenimplementationen
-- Tolle Beispiele
+-   Einleitung
+-   Wichtige Begriffe
+-   Antipatterns
+-   Eigenimplementationen
+-   Tolle Beispiele
 
 ----
 
@@ -30,10 +32,10 @@ Stefani Gerber
 Frontend Engineer bei Bluesky IT-Solutions in Basel
 
 Note:
-- 14 Jahre Entwicklung, hauptsächlich Frontend
-- mache etwas Backend (SpringBoot)
-- sehe viele Entwicklerinnen in der umgekehrten Rolle
-- > Aus großer Kraft folgt grosse Verantwortung.
+-   14 Jahre Entwicklung, hauptsächlich Frontend
+-   mache etwas Backend (SpringBoot)
+-   sehe viele Entwicklerinnen in der umgekehrten Rolle
+-   > Aus großer Kraft folgt grosse Verantwortung.
 
 ----
 
@@ -42,56 +44,58 @@ Note:
 > -- <cite>John Lash</cite>
 
 Note:
-- Habe lange Tai Chi gemacht
-- Kung Fu in Zeitlupe
-- Unterschiedliche Bewegungen, die gleich lang dauern sollen
-- sah beim Lehrer immer einfach aus
-- wenn wir uns abkämpften, sagte er manchmal _don't do weird things_
-- Satz ist geblieben, denke ihn oft, wenn ich seltsames HTML sehe
+-   Habe lange Tai Chi gemacht
+-   Kung Fu in Zeitlupe
+-   Unterschiedliche Bewegungen, die gleich lang dauern sollen
+-   sah beim Lehrer immer einfach aus
+-   wenn wir uns abkämpften, sagte er manchmal _don't do weird things_
+-   Satz ist geblieben, denke ihn oft, wenn ich seltsames HTML sehe
 
 ----
 
 ### Der Preis von schlechtem HTML
 
-- fehleranfällig
-- schwierig zu stylen
-- schlecht verständlich für andere Entwickler
-- erschwert automatisiertes Testing
+-   fehleranfällig
+-   schwierig zu stylen
+-   schlecht verständlich für andere Entwickler
+-   erschwert automatisiertes Testing
 
 Note:
-- Hack -> Fix für den Hack in Browser X -> Fix für den Fix für den Hack...
+-   Hack -> Fix für den Hack in Browser X -> Fix für den Fix für den Hack...
 
 ----
 
 ### Spezifikation
 
-- W3C: <https://www.w3.org/TR/html52/>
-- WhatWG: <https://html.spec.whatwg.org>
+-   W3C: <https://www.w3.org/TR/html52/>
+-   WhatWG: <https://html.spec.whatwg.org>
 
 Note:
 > This specification should be read like all other specifications. First, it should be read cover-to-cover, multiple times. Then, it should be read backwards at least once. Then it should be read by picking random sections from the contents list and following all the cross-references.
-- habe ein bisschen Angst, dass sie es ernst meinen
-- Hier ein paar Punkte, von jemandem, der sie wenigstens einmal cover-to-cover gelesen hat.
+
+-   habe ein bisschen Angst, dass sie es ernst meinen
+-   Hier ein paar Punkte, von jemandem, der sie wenigstens einmal cover-to-cover gelesen hat.
+
 
 ---
 
 ## Wichtige Begriffe 💡
 
 Note:
-- um sicherzustellen, dass wir vom selben reden
+-   um sicherzustellen, dass wir vom selben reden
 
 ----
 
 ### HTML vs DOM
 
-- *HTML*: Markup Sprache um DOM darzustellen
-- *DOM*: Dokumentenmodell mit zugehörigem API
+-   _HTML_: Markup Sprache um DOM darzustellen
+-   _DOM_: Dokumentenmodell mit zugehörigem API
 
 Note:
-- In Browser zeigen (view source, DevTools)
-  - Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
-- property (HTML) vs attribute (DOM)
-- DOM kann sich ändern, ohne dass es in HTML reflektiert wird
+-   In Browser zeigen (view source, DevTools)
+    -   Tag, möglichst sprechender Name (früher möglichst kurz, z.B. a=anchor)
+-   property (HTML) vs attribute (DOM)
+-   DOM kann sich ändern, ohne dass es in HTML reflektiert wird
 
 ----
 
@@ -111,64 +115,64 @@ Note:
 ```
 
 Note:
-- DOCTYPE für Version, HTML5 wenn immer möglich
-- language -> hilft Browsern, beim übersetzen und Screenreadern beim vorlesen
-- charset: erstes Element in head wegen parsen des Dokuments
-- Titel nicht leer
-- Body darf leer sein (weil evtl. per JS gefüllt?)
+-   DOCTYPE für Version, HTML5 wenn immer möglich
+-   language -> hilft Browsern, beim übersetzen und Screenreadern beim vorlesen
+-   charset: erstes Element in head wegen parsen des Dokuments
+-   Titel nicht leer
+-   Body darf leer sein (weil evtl. per JS gefüllt?)
 
 ----
 
 ### Tags
 
-- Elemente in HTML
-- eigenständig versus in Kontext [&lt;option&gt;](https://www.w3.org/TR/html52/sec-forms.html#the-option-element)
+-   Elemente in HTML
+-   eigenständig versus in Kontext [&lt;option&gt;](https://www.w3.org/TR/html52/sec-forms.html#the-option-element)
 
 Note:
-- Dokumentation zeigen, z.B. <input>, das nur im Form Sinn macht
+-   Dokumentation zeigen, z.B. <input>, das nur im Form Sinn macht
 
 ----
 
 ### Events
 
-- werden im DOM gefeuert
-- bubblen
-- einige haben Default-Verhalten
+-   werden im DOM gefeuert
+-   bubblen
+-   einige haben Default-Verhalten
 
 Note:
-- bubblen von Kind zu Parent
-- Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
-- Beispielabfolge (keydown, keypress, keyup)
-- gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
-- https://eloquentjavascript.net/15_event.html
-- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
-- https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events
-- https://developer.mozilla.org/en-US/docs/Web/Events#Form_events
+-   bubblen von Kind zu Parent
+-   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
+-   Beispielabfolge (keydown, keypress, keyup)
+-   gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
+-   <https://eloquentjavascript.net/15_event.html>
+-   <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+-   <https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events>
+-   <https://developer.mozilla.org/en-US/docs/Web/Events#Form_events>
 
 ----
 
 ### Barrierefreiheit
 
-- kann von allen genutzt und wahrgenommen werden
-- mithilfe von assistiven Technologien
+-   kann von allen genutzt und wahrgenommen werden
+-   mithilfe von assistiven Technologien
 
 Note:
-- auf Englisch Accessiblity
-- soll kein Vortrag über Barrierefreiheit werden
-- assistive Technologien helfen, die entsprechende Hürde zu überbrücken
-  - Screenreader für Sehbehinderte oder Analphabeten
-  - Joystick für motorisch behinderte Menschen
-- parsen von Webseiten
-- viel kommt schon von selber mit, wenn man das HTML richtig braucht
-- First Rule of ARIA Use: ARIA möglichst nicht verwenden <https://www.w3.org/TR/using-aria/#>
-  > First Rule of ARIA Use
-If you can use a native HTML element [HTML51] or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+-   auf Englisch Accessiblity
+-   soll kein Vortrag über Barrierefreiheit werden
+-   assistive Technologien helfen, die entsprechende Hürde zu überbrücken
+    -   Screenreader für Sehbehinderte oder Analphabeten
+    -   Joystick für motorisch behinderte Menschen
+-   parsen von Webseiten
+-   viel kommt schon von selber mit, wenn man das HTML richtig braucht
+-   First Rule of ARIA Use: ARIA möglichst nicht verwenden <https://www.w3.org/TR/using-aria/#>
+    > First Rule of ARIA Use
+    > If you can use a native HTML element \[HTML51\] or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 
 Prinzipen
-- wahrnehmbar
-- bedienbar
-- verständlich
-- robust
+-   wahrnehmbar
+-   bedienbar
+-   verständlich
+-   robust
 
 ----
 <!-- .slide: class="block-vs-inline" -->
@@ -182,17 +186,17 @@ relevant beim Verschachteln von Elementen
 </div>
 
 Note:
-- betrifft Darstellung und somit ausserhalb des Scopes von diesem Talk
-- trotzdem erwähnt, weil es später beim stylen viel Mühe spart, wenn im Markup schon sinnvoll gewählt
-- mdn inline-elements
+-   betrifft Darstellung und somit ausserhalb des Scopes von diesem Talk
+-   trotzdem erwähnt, weil es später beim stylen viel Mühe spart, wenn im Markup schon sinnvoll gewählt
+-   mdn inline-elements
 
 ---
 
 ## Antipatterns 😡
 
 Note:
-- das verwenden von den falschen Elementen (es gibt andere / bessere)
-- das falsche verwenden von Elementen (den Zweck des benutzten Elements entfremden)
+-   das verwenden von den falschen Elementen (es gibt andere / bessere)
+-   das falsche verwenden von Elementen (den Zweck des benutzten Elements entfremden)
 
 ----
 
@@ -208,14 +212,14 @@ Note:
 ### Buttons vs Links
 
 Klickt man, und dann passiert etwas
--  <a href="#/2/1">link</a>: springt auf eine andere Seite
-- <button type="button" onclick="alert('Hallo Welt');">button</button>: löst eine Aktion aus
+-   <a href="#/2/1">link</a>: springt auf eine andere Seite
+-   <button type="button" onclick="alert('Hallo Welt');">button</button>: löst eine Aktion aus
 
 Note:
-- nicht vermischen
-  - wenn was wohin leiten soll, dann soll es auch wie ein Link aussehen und nicht wie ein Button
-  - Erwartungen der Benutzer
-- Link kann auch was anderes enthalten als Text, z.B. ein Bild.
+-   nicht vermischen
+    -   wenn was wohin leiten soll, dann soll es auch wie ein Link aussehen u nd nicht wie ein Button
+    -   Erwartungen der Benutzer
+-   Link kann auch was anderes enthalten als Text, z.B. ein Bild.
 
 ----
 
@@ -236,9 +240,9 @@ Note:
 </button>
 
 Note:
-- Zusatzinformationen gehen verloren
-  - siehe z.B. Linkvorschau links unten im Browser
-- Unklar für assistive Technologien
+-   Zusatzinformationen gehen verloren
+    -   siehe z.B. Linkvorschau links unten im Browser
+-   Unklar für assistive Technologien
 
 ----
 
@@ -260,33 +264,33 @@ Note:
 </form>
 
 Note:
-- habe ich in letzter Zeit weniger gesehen, war aber eine zeitlang recht angesagt
+-   habe ich in letzter Zeit weniger gesehen, war aber eine zeitlang recht angesagt
 
 ----
 <!-- .slide: class="slide-focus" -->
 
 ### Focus
 
-- <button>Button</button>, <a href="https://baselone.ch">link</a>
-- Form-Elemente <input placeholder="Name"> <select><option>1</option><option>2</option></select>
-- alles mit keyindex!=-1
+-   <button>Button</button>, <a href="https://baselone.ch">link</a>
+-   Form-Elemente <input placeholder="Name"> <select><option>1</option><option>2</option></select>
+-   alles mit keyindex!=-1
 
 Note:
-- alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
-- nicht grafisch ausblenden
-- FF <https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox>
+-   alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
+-   nicht grafisch ausblenden
+-   FF <https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox>
 
 ----
 
 ### div, span
 
-> The div element has *no special meaning at all*.
+> The div element has _no special meaning at all_.
 
 <span class="source">Quelle: <https://www.w3.org/TR/html52/grouping-content.html#the-div-element></span>
 
 Note:
-- It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
-- Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
+-   It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
+-   Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
 
 ----
 
@@ -298,7 +302,7 @@ Note:
 ```
 
 Note:
-- ok, als Wrapper für Styling
+-   ok, als Wrapper für Styling
 
 ----
 
@@ -330,9 +334,9 @@ Note:
 </div>
 
 Note:
-- kein form-Tag
-- was, wenn der User nicht klicken kann? -> submit Event verwenden
-- geht auch für JS-Lösungen
+-   kein form-Tag
+-   was, wenn der User nicht klicken kann? -> submit Event verwenden
+-   geht auch für JS-Lösungen
 
 ---
 
@@ -341,11 +345,11 @@ Note:
 wenn es das Element nicht gibt, das man braucht
 
 Note:
-- verschiedene Gründe, wieso
-  - existiert nicht
-  - funktioniert nicht wie man es möchte
-  - sieht nicht aus wie gewollt
-- analysieren wir mal, was die Kosten für ein reines Styling sind
+-   verschiedene Gründe, wieso
+    -   existiert nicht
+    -   funktioniert nicht wie man es möchte
+    -   sieht nicht aus wie gewollt
+-   analysieren wir mal, was die Kosten für ein reines Styling sind
 
 ----
 <!-- .slide: class="slide-select" -->
@@ -365,18 +369,18 @@ Note:
 </select>
 
 Note:
-- Select kann
-  - Fokus
-  - Bedient mit Maus
-    - öffnen
-    - Option anklicken
-    - schliessen (wegklicken)
-  - Tastatur
-    - Space-Taste
-    - Navigieren mit Cursor
-    - Textsuche
-    - Auswahl mit Space? oder Enter
-  - Werte so abspeichern, dass sie onSubmit ausgelesen werden
+Select kann
+-   Fokus
+-   Bedient mit Maus
+    -   öffnen
+    -   Option anklicken
+    -   schliessen (wegklicken)
+-   Tastatur
+    -   Space-Taste
+    -   Navigieren mit Cursor
+    -   Textsuche
+    -   Auswahl mit Space? oder Enter
+-   Werte so abspeichern, dass sie onSubmit ausgelesen werden
 
 ----
 
@@ -385,31 +389,31 @@ Note:
 <https://material.angular.io/components/select/overview>
 
 Note:
-- Angular Material gewählt, weil ich viel damit zu tun habe
-- eigenes Markup
-- offenes Dropdown in CDK-Layer, ganz unten in DOM
+-   Angular Material gewählt, weil ich viel damit zu tun habe
+-   eigenes Markup
+-   offenes Dropdown in CDK-Layer, ganz unten in DOM
 
 ----
 
 #### Fazit
 
-- Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
-- in allen Browsern
-- Performance-Einbusse
+Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
+-   in allen Browsern
+-   vertretbarer Performance-Einbusse
 
 Note:
-- Ist in der Spez mindestens seit HTML 2.0 1995, denke eher seit HTML 1.0, aber konnte ich nicht finden
-- Ländereingabe -> Switzerland -> Kann nicht tippen *aaaaah*
+-   Ist in der Spez mindestens seit HTML 2.0 1995, denke eher seit HTML 1.0, aber konnte ich nicht finden
+-   Ländereingabe -> Switzerland -> Kann nicht per Tippen auswählen
 
 ----
 
 ### WebComponents
-- Standard
-- wiederverwendbar
+-   Standard
+-   wiederverwendbar
 
 Note:
-- bzw. Set von Standards
-- wiederverwendbar im Sinn von mit anderen Technologien als mit der Ersteller
+-   bzw. Set von Standards
+-   wiederverwendbar im Sinn von mit anderen Technologien als mit der Ersteller
 
 ---
 
@@ -425,9 +429,9 @@ Note:
 <input type="text|number|color|tel">
 ```
 
-- neue Typen
-- spezielle Keyboard-Unterstützung (z.B. für Zahlen)
-- Vorvalidierung
+-   neue Typen
+-   spezielle Keyboard-Unterstützung (z.B. für Zahlen)
+-   Vorvalidierung
 
 <div class="wrapper fragment">
   <label>Color <input type="color"></label><br>
@@ -436,7 +440,7 @@ Note:
 
 
 Note:
-- über 20 types
+-   über 20 Types
 
 ----
 
@@ -448,7 +452,7 @@ Note:
 </details>
 
 Note:
-- all die jQuery-Accordeon
+-   all die jQuery-Accordeon
 
 ----
 
@@ -457,9 +461,9 @@ Note:
 <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Examples>
 
 Note:
-- wichtig, wie der Fokus gehandhabt wird
-  - wo ist er, wenn geöffnet
-- schliessen mit esc
+-   wichtig, wie der Fokus gehandhabt wird
+    -   wo ist er, wenn geöffnet
+-   schliessen mit esc
 
 ----
 
@@ -468,8 +472,8 @@ Note:
 <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist#Examples>
 
 Note:
-- unterstützt den Benutzer bei der Eingabe
-- kein Ersatz für Select, da es nicht enforcen kann, dass einer der ausgewählten Werte gewählt wird
+-   unterstützt den Benutzer bei der Eingabe
+-   kein Ersatz für Select, da es nicht enforcen kann, dass einer der ausgewählten Werte gewählt wird
 
 ----
 
@@ -477,9 +481,9 @@ Note:
 <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture>
 
 Note:
-- entstanden aus Polyfill
-- Selektiv Bilder anzeigen basierend auf Viewport
-- neue Bildformate -> Fallback für alte Browser
+-   entstanden aus Polyfill
+-   Selektiv Bilder anzeigen basierend auf Viewport
+-   neue Bildformate -> Fallback für alte Browser
 
 ----
 
@@ -494,20 +498,21 @@ Note:
 <div lang="de" class="narrow-container fragment">mit: Taka&shy;tukaland</div>
 
 Note:
-- vermisst von LateX her
-- &shy; viel schöner
-- bleibt die Frage, wie Autoren dies gut eingeben können
+-   vermisst von LateX her
+-   &shy; viel schöner
+-   bleibt die Frage, wie Autoren dies gut eingeben können
+
 ---
 
 ## Links
 
-- MDN <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details>
-- w3Schools <https://www.w3schools.com/tags/tag_details.asp>
-- can I use <https://caniuse.com>
-- Spec <https://www.w3.org/TR/html52/>, <https://html.spec.whatwg.org>
-- DevTips <https://umaar.com/dev-tips/>
+-   MDN <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details>
+-   w3Schools <https://www.w3schools.com/tags/tag_details.asp>
+-   can I use <https://caniuse.com>
+-   Spec <https://www.w3.org/TR/html52/>, <https://html.spec.whatwg.org>
+-   DevTips <https://umaar.com/dev-tips/>
 
 Note:
-- wie verwendet
-- welche Attribute
-- Browser Support
+-   wie verwendet
+-   welche Attribute
+-   Browser Support
