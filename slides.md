@@ -79,6 +79,7 @@ Note:
 ## Wichtige Begriffe 💡
 
 Note:
+-   should start < 6min
 -   um sicherzustellen, dass wir vom selben reden
 
 ----
@@ -192,6 +193,7 @@ Note:
 ## Antipatterns 😡
 
 Note:
+-   should start < 17min
 -   das verwenden von den falschen Elementen (es gibt andere / bessere)
 -   das falsche verwenden von Elementen (den Zweck des benutzten Elements entfremden)
 
@@ -342,6 +344,7 @@ Note:
 wenn es das Element nicht gibt, das man braucht
 
 Note:
+-   should start < 26min
 -   verschiedene Gründe, wieso
     -   existiert nicht
     -   funktioniert nicht wie man es möchte
@@ -416,6 +419,8 @@ Note:
 
 ## Tolle Beispiele 🥰
 
+Note:
+-   should start < 33min
 
 ----
 
@@ -487,8 +492,8 @@ Note:
 
 ## Links
 
--   MDN <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details>
--   w3Schools <https://www.w3schools.com/tags/tag_details.asp>
+-   MDN <https://developer.mozilla.org>
+-   w3Schools <https://www.w3schools.com>
 -   can I use <https://caniuse.com>
 -   Spec <https://www.w3.org/TR/html52/>, <https://html.spec.whatwg.org>
 -   DevTips <https://umaar.com/dev-tips/>

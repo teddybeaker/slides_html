@@ -88,7 +88,14 @@ _Bereich abgeschlossen nach total X Minuten_
 -   Eigenimplementationen: Antipattern +6min
 -   Tolle Beispiele: Antipattern +17min
 
-### Fragen an Eve
+### Timing 9.10.2019
+-   Einleitung: 6:30min
+-   Begriffe: 18min
+-   Antipattern: 28:30min
+-   Eigenimplementationen: 35:30
+-   Tolle Beispiele: 46:30
+
+### Fragen an Eve / JC
 -   worauf achten
     -   roter Faden erkennbar?
     -   fehlen Illustrationen?
