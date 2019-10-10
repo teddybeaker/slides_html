@@ -104,6 +104,36 @@ _Bereich abgeschlossen nach total X Minuten_
     -   allgemein bessere Bezeichnungen?
     -   `Wichtige Begriffe` -> `Grundlagen`? Oder ist das abwertend?
 
+#### Feedback
+-   Dauer: 42:30
+-   Wichtige Begriffe
+    -   abstrakt und konktret gemischt
+        -   Barrierefreiheit -> nach Preis von schlechtem HTML (kann auch schon auf der Folie stehen)
+        -   Block vs Inline -> integrieren in "Tags" oder verschieben in "Antipatterns"
+    -   Mnimal HTML -> `lang="de"`
+    -   Events: nicht `blur` verwenden oder im Zusammenhang mit `focus` (Alternativen: `click`)
+-   Antipattern
+    -   allgemein: erwähnen, wieso nicht so machen (auch wenn bei "Preis von schlechtem Markup" schon erwähnt)
+        -   assistive Technologien
+        -   SEO
+        -   automatisierung
+-   Eigententwicklung
+    -   Titel korrekt trennen oder kleiner machen
+    -   Aufbau schürt die Erwartung auf mehr Tipps
+    -   Folie zu Webcomponents zuerst
+-   Tolle Beispiele
+    -   Input Types -> `range` in CodeSample aufnehmen; Beispiele grösser machen
+-   Präsentation allgemein
+    -   Links sind schlecht lesbar, Kontrast zu tief (besonders wenn Licht blendet) -> Hintergrund heller?
+    -   DevTools wieder schliessen (lenken ab)
+    -   Zoom vorher einstellen (auch Keyboard-Wechsel)
+    -   Links nur klicken, nicht rechts-klick
+    -   `ctrl` + `tab` um innerhalb einer Applikation zwischen den Tabs zu wechseln
+
+## TODO
+-   Punkte aus Feedback umsetzen
+-   Finde ich Alternativen, in den DevTools zu zoomen? Gestures auf Trackpad
+
 ## Call for Paper
 
 ### Titel

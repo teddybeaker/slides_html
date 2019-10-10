@@ -270,3 +270,11 @@ body {
 @media print {
   .backgrounds {
     background-color: #191919; } }
+
+/* logo */
+.reveal {
+  background:url("./assets/bluesky_logo_claim_white.svg");
+  background-position: right top 5px;
+  background-size: 20%;
+  background-repeat: no-repeat;
+}
