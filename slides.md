@@ -181,6 +181,7 @@ Note:
 -   einige haben Default-Verhalten
 
 Note:
+-   gefeuert meist durch Nutzerinterkation (Klick, Taste drücken)
 -   bubblen von Kind zu Parent (focusin, focusout, nicht focus und blur)
 -   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
 -   Beispielabfolge (keydown, keypress, keyup)
@@ -206,6 +207,9 @@ Note:
 > Semantic HTML or semantic markup is HTML that introduces meaning to the web page rather than just presentation.
 
 <span class="source">Quelle: <https://www.lifewire.com/why-use-semantic-html-3468271></span>
+
+Note:
+-   Antipattern verletzen diese Semantik
 
 ----
 <!-- .slide: class="slide-buttons-vs-links" -->
@@ -285,18 +289,6 @@ Note:
 
 ----
 
-### div, span
-
-> The div element has _no special meaning at all_.
-
-<span class="source">Quelle: <https://www.w3.org/TR/html52/grouping-content.html#the-div-element></span>
-
-Note:
--   It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
--   Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
-
-----
-
 #### Weird divs
 
 ```
@@ -307,6 +299,18 @@ Note:
 Note:
 -   nicht barrierefrei
 -   ok als Wrapper für Styling, keine Funktionalität
+
+----
+
+### div, span
+
+> The div element has _no special meaning at all_.
+
+<span class="source">Quelle: <https://www.w3.org/TR/html52/grouping-content.html#the-div-element></span>
+
+Note:
+-   It represents its children. It can be used with the _class_, _lang_, and _title_ attributes to mark up semantics common to a group of consecutive elements.
+-   Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
 
 ----
 
