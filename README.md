@@ -57,7 +57,7 @@ _npm install -g reveal-md_
 -   Browser -> Chrome
     -   pinned tabs geschlossen
     -   Bookmark-Bar ausgeblendet
-    -   Zoom in den Dev Tools ist einfach machbar (Keyboard auf Englisch wechseln, `command` + `+`)
+    -   Zoom in den Dev Tools vorbereitet ist einfach machbar (Keyboard auf Englisch wechseln, `command` + `+`)
     -   Präsentation Fullscreen
     -   Bildschirm-Wechsel zwischen Autorenansicht und Präsentation ist eingeübt
 -   Genügend Strom
@@ -129,10 +129,7 @@ _Bereich abgeschlossen nach total X Minuten_
     -   Zoom vorher einstellen (auch Keyboard-Wechsel)
     -   Links nur klicken, nicht rechts-klick
     -   `ctrl` + `tab` um innerhalb einer Applikation zwischen den Tabs zu wechseln
-
-## TODO
--   Punkte aus Feedback umsetzen
--   Finde ich Alternativen, in den DevTools zu zoomen? Gestures auf Trackpad
+-   Finde ich Alternativen, in den DevTools zu zoomen? Gestures auf Trackpad -> funktioniert nicht in DevTools
 
 ## Call for Paper
 

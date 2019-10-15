@@ -59,9 +59,35 @@ Note:
 -   schwierig zu stylen
 -   schlecht verständlich für andere Entwickler
 -   erschwert automatisiertes Testing
+-   nicht barrierefrei
 
 Note:
 -   Hack -> Fix für den Hack in Browser X -> Fix für den Fix für den Hack...
+
+----
+
+### Barrierefreiheit
+
+-   kann von allen genutzt und wahrgenommen werden
+-   mithilfe von assistiven Technologien
+
+Note:
+-   auf Englisch Accessiblity
+-   soll kein Vortrag über Barrierefreiheit werden
+-   assistive Technologien helfen, die entsprechende Hürde zu überbrücken
+    -   Screenreader für Sehbehinderte oder Analphabeten
+    -   Joystick für motorisch behinderte Menschen
+-   parsen von Webseiten
+-   viel kommt schon von selber mit, wenn man das HTML richtig braucht
+-   First Rule of ARIA Use: ARIA möglichst nicht verwenden <https://www.w3.org/TR/using-aria/#>
+    > First Rule of ARIA Use
+    > If you can use a native HTML element \[HTML51\] or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+
+Prinzipen
+-   wahrnehmbar
+-   bedienbar
+-   verständlich
+-   robust
 
 ----
 
@@ -101,7 +127,7 @@ Note:
 
 ```
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <title>valides HTML Dokument</title>
@@ -131,50 +157,8 @@ Note:
 
 ----
 
-### Events
-
--   werden im DOM gefeuert
--   bubblen
--   einige haben Default-Verhalten
-
-Note:
--   bubblen von Kind zu Parent
--   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
--   Beispielabfolge (keydown, keypress, keyup)
--   gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
--   <https://eloquentjavascript.net/15_event.html>
--   <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
--   <https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events>
--   <https://developer.mozilla.org/en-US/docs/Web/Events#Form_events>
-
-----
-
-### Barrierefreiheit
-
--   kann von allen genutzt und wahrgenommen werden
--   mithilfe von assistiven Technologien
-
-Note:
--   auf Englisch Accessiblity
--   soll kein Vortrag über Barrierefreiheit werden
--   assistive Technologien helfen, die entsprechende Hürde zu überbrücken
-    -   Screenreader für Sehbehinderte oder Analphabeten
-    -   Joystick für motorisch behinderte Menschen
--   parsen von Webseiten
--   viel kommt schon von selber mit, wenn man das HTML richtig braucht
--   First Rule of ARIA Use: ARIA möglichst nicht verwenden <https://www.w3.org/TR/using-aria/#>
-    > First Rule of ARIA Use
-    > If you can use a native HTML element \[HTML51\] or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
-
-Prinzipen
--   wahrnehmbar
--   bedienbar
--   verständlich
--   robust
-
-----
 <!-- .slide: class="block-vs-inline" -->
-### block vs inline
+### Tags: display block vs inline
 relevant beim Verschachteln von Elementen
 
 <div class="wrapper fragment">
@@ -187,6 +171,24 @@ Note:
 -   betrifft Darstellung und somit ausserhalb des Scopes von diesem Talk
 -   trotzdem erwähnt, weil es später beim stylen viel Mühe spart, wenn im Markup schon sinnvoll gewählt
 -   mdn inline-elements
+
+----
+
+### Events
+
+-   werden im DOM gefeuert
+-   einige bubblen
+-   einige haben Default-Verhalten
+
+Note:
+-   bubblen von Kind zu Parent (focusin, focusout, nicht focus und blur)
+-   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
+-   Beispielabfolge (keydown, keypress, keyup)
+-   gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
+-   <https://eloquentjavascript.net/15_event.html>
+-   <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+-   <https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events>
+-   <https://developer.mozilla.org/en-US/docs/Web/Events#Form_events>
 
 ---
 
@@ -264,6 +266,8 @@ Note:
 
 Note:
 -   habe ich in letzter Zeit weniger gesehen, war aber eine zeitlang recht angesagt
+-   Fehler beim Bookmarken
+-   Search Engine
 
 ----
 <!-- .slide: class="slide-focus" -->
@@ -276,7 +280,7 @@ Note:
 
 Note:
 -   alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
--   nicht grafisch ausblenden
+-   nicht grafisch ausblenden -> Accessibility
 -   FF <https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox>
 
 ----
@@ -301,7 +305,8 @@ Note:
 ```
 
 Note:
--   ok, als Wrapper für Styling
+-   nicht barrierefrei
+-   ok als Wrapper für Styling, keine Funktionalität
 
 ----
 
@@ -336,10 +341,12 @@ Note:
 -   kein form-Tag
 -   was, wenn der User nicht klicken kann? -> submit Event verwenden
 -   geht auch für JS-Lösungen
+-   nicht barrierefrei
+-   Browser hat evtl. Probleme beim Unterstützen/Vorbefüllen
 
 ---
 
-## Eigenimplementationen 👷‍♀️
+## Eigen&shy;imple&shy;men&shy;ta&shy;tionen 👷‍♀️
 
 wenn es das Element nicht gibt, das man braucht
 
@@ -352,6 +359,33 @@ Note:
 -   analysieren wir mal, was die Kosten für ein reines Styling sind
 
 ----
+
+### WebComponents
+-   Standard
+-   wiederverwendbar
+
+Note:
+-   bzw. Set von Standards
+-   wiederverwendbar im Sinn von mit anderen Technologien als mit der Ersteller
+
+----
+
+```
+<script>
+  class MyElement extends HTMLElement {
+    ...
+  }
+  customElements.define('my-element', MyElement);
+</script>
+<my-element>Hello</my-element>
+```
+
+Note:
+-   erlaubt eigene Funktionalität (JS)
+-   Styling (abgegrenzt durch Shadow DOM)
+
+----
+
 <!-- .slide: class="slide-select" -->
 
 #### Analyse existierendes HTML Element
@@ -369,6 +403,8 @@ Note:
 </select>
 
 Note:
+-   eingehen auf ein anderes Thema: Anforderungen erheben basierend auf bestehendem, ähnlichen Element
+-   Gegenüberstellung zeigen anhand der nächsten Slide
 Select kann
 -   Fokus
 -   Bedient mit Maus
@@ -386,7 +422,7 @@ Select kann
 
 #### Beispiel
 
-<https://material.angular.io/components/select/overview>
+[MatSelect](https://material.angular.io/components/select/overview)
 
 Note:
 -   Angular Material gewählt, weil ich viel damit zu tun habe
@@ -405,16 +441,6 @@ Note:
 -   Ist in der Spez mindestens seit HTML 2.0 1995, denke eher seit HTML 1.0, aber konnte ich nicht finden
 -   Ländereingabe -> Switzerland -> Kann nicht per Tippen auswählen
 
-----
-
-### WebComponents
--   Standard
--   wiederverwendbar
-
-Note:
--   bzw. Set von Standards
--   wiederverwendbar im Sinn von mit anderen Technologien als mit der Ersteller
-
 ---
 
 ## Tolle Beispiele 🥰
@@ -428,7 +454,7 @@ Note:
 <!-- .slide: class="slide-html-inputs" -->
 
 ```
-<input type="text|number|color|tel">
+<input type="text|number|color|tel|range">
 ```
 
 -   neue Typen
@@ -460,7 +486,7 @@ Note:
 
 ### Dialog
 
-<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Examples>
+[&lt;dialog&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#Examples)
 
 Note:
 -   wichtig, wie der Fokus gehandhabt wird
@@ -471,7 +497,7 @@ Note:
 
 ### Datalist
 
-<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist#Examples>
+[&lt;datalist&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist#Examples)
 
 Note:
 -   unterstützt den Benutzer bei der Eingabe
@@ -480,7 +506,7 @@ Note:
 ----
 
 ### Picture Element
-<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture>
+[&lt;picture&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 Note:
 -   entstanden aus Polyfill

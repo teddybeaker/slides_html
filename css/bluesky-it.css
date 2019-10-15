@@ -80,9 +80,9 @@ button {
 }
 
 .slide-html-inputs .wrapper {
-  width: 200px;
+  width: 40%;
   margin-top: 24px;
-  font-size: 16px;
+  font-size: smaller;
   color: black;
   text-align: left;
   background-color: #646464;
