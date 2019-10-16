@@ -45,7 +45,6 @@ _npm install -g reveal-md_
 ## Präsentation - organisatorisch
 
 ### Checkliste Vorbereitung
--   Weiternavigierungsdings
 -   Adapter
 -   Shortcuts auf Spickzettel
 

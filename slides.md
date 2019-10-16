@@ -7,6 +7,10 @@ css: css/font-awesome.min.css,css/bluesky-it.css
 
 <!--lint disable rule-style-->
 
+<!-- .slide: data-background="./images/BaselOne_9x16.jpg" -->
+
+----
+
 <!-- .slide: data-background="./images/background.jpg" -->
 <!-- .slide: class="slide-title" -->
 # Markup-Tipps für Backender
