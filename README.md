@@ -33,7 +33,12 @@ _npm install -g reveal-md_
 -   Speaker-Notes mit `Note:` auf den Folien einbinden -> sind in der Autorenansicht sichtbar
 
 ### Folien exportieren
+
+#### Als PDF
 `reveal-md slides.md --print slides.pdf`
+
+#### Als HTML
+`sh export.sh`
 
 ### Theming
 -   `reveal.js` selber ausgecheckt und eigenes Theme (basierend auf `dark`) erstellt mit den Farben von Bluesky > `theme/bluesky-dark.css`

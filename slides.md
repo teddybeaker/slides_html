@@ -1,7 +1,7 @@
 ---
 title: Markup-Tipps für Backender
 theme: theme/bluesky-dark.css
-css: css/font-awesome.min.css,css/bluesky-it.css
+css: theme/css/font-awesome.min.css,css/bluesky-it.css
 ---
 <base target="\_blank">
 
@@ -11,7 +11,7 @@ css: css/font-awesome.min.css,css/bluesky-it.css
 
 ----
 
-<!-- .slide: data-background="./images/background.jpg" -->
+<!-- .slide: data-background="./theme/images/background_titlepage.jpg" -->
 <!-- .slide: class="slide-title" -->
 # Markup-Tipps für Backender
 
@@ -20,6 +20,8 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 ----
 
 ### Agenda ☑️
+
+<div class="triangle" style="outline: 1px solid green; width: 10px;"></div>
 
 -   Einleitung
 -   Wichtige Begriffe

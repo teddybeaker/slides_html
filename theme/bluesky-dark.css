@@ -21,12 +21,12 @@ body {
 
 ::selection {
   color: #fff;
-  background: #ea516e;
+  background: #640c1c;
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #ea516e;
+  background: #640c1c;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -221,7 +221,7 @@ body {
 
 .reveal .roll span:after {
   color: #fff;
-  background: #640c1c; }
+  background: #a81430; }
 
 /*********************************************
  * IMAGES
@@ -243,21 +243,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #a81430;
+  border-color: #e52448;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #a81430; }
+  color: #e52448; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #a81430; }
+  color: #e52448; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -271,10 +271,27 @@ body {
   .backgrounds {
     background-color: #191919; } }
 
-/* logo */
+/** logo */
 .reveal {
-  background:url("./assets/bluesky_logo_claim_white.svg");
+  background: url("./images/bluesky_logo_claim_white.svg");
   background-position: right top 5px;
   background-size: 20%;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
+
+/** list items */
+li {
+  list-style: none;
+  text-indent: -.9em; }
+
+li::before {
+  font-family: FontAwesome;
+  content: '\f0da';
+  margin-right: 0.5em; }
+
+/** slide title */
+.slide-title,
+.slide-title h1 {
+  color: rgba(168, 20, 48, 0.85); }
+
+.slide-title h1 {
+  text-shadow: 1px 2px #646464; }

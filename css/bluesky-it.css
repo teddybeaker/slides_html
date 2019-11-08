@@ -5,16 +5,6 @@
  */
 
 /** generic */
-li {
-  list-style: none;
-  text-indent: -.9em;
-}
-
-li::before {
-  font-family: FontAwesome;
-  content: '\f0da';
-  margin-right: 0.5em;
-}
 
 button {
   font-size: 42px;
@@ -29,16 +19,6 @@ button {
 }
 
 /** slide specific styles */
-
-.slide-title,
-.slide-title h1 {
-  color: rgba(168,20,48,0.85);
-
-}
-
-.slide-title h1 {
-  text-shadow: 1px 2px #646464;
-}
 
 .block-vs-inline .wrapper {
   width: 200px;
