@@ -1,27 +1,19 @@
 ---
-title: Markup-Tipps für Backender
-theme: theme/bluesky-dark.css
-css: theme/css/font-awesome.min.css,css/bluesky-it.css
+title: semantisches HTML
+theme: league
+css: css/slide-example-styles.css
 ---
+
+<!-- stellt sicher, dass Links in einem neuen Tab geöffnet werden -->
 <base target="\_blank">
 
-<!--lint disable rule-style-->
+# semantisches Markup
 
-<!-- .slide: data-background="./images/BaselOne_9x16.jpg" -->
-
-----
-
-<!-- .slide: data-background="./theme/images/background_titlepage.jpg" -->
-<!-- .slide: class="slide-title" -->
-# Markup-Tipps für Backender
-
-Stefani Gerber, 17. Oktober 2019 BaselOne
+Stefani Gerber, 26. September 2021
 
 ----
 
 ### Agenda ☑️
-
-<div class="triangle" style="outline: 1px solid green; width: 10px;"></div>
 
 -   Einleitung
 -   Wichtige Begriffe
@@ -35,12 +27,12 @@ Stefani Gerber, 17. Oktober 2019 BaselOne
 
 Stefani Gerber
 
-Frontend Engineer bei Bluesky IT-Solutions in Basel
+IT Engineer bei BLKB
 
 Note:
 -   14 Jahre Entwicklung, hauptsächlich Frontend
 -   mache etwas Backend (SpringBoot)
--   sehe viele Entwicklerinnen in der umgekehrten Rolle
+-   sehe viele Entwickler:innen in der umgekehrten Rolle
 -   > Aus großer Kraft folgt grosse Verantwortung.
 
 ----
@@ -50,8 +42,8 @@ Note:
 > -- <cite>John Lash</cite>
 
 Note:
--   Habe lange Tai Chi gemacht
--   Kung Fu in Zeitlupe
+-   Habe lange TaiChi gemacht
+-   Kung-Fu in Zeitlupe
 -   Unterschiedliche Bewegungen, die gleich lang dauern sollen
 -   sah beim Lehrer immer einfach aus
 -   wenn wir uns abkämpften, sagte er manchmal _don't do weird things_
@@ -63,12 +55,12 @@ Note:
 
 -   fehleranfällig
 -   schwierig zu stylen
--   schlecht verständlich für andere Entwickler
+-   schlecht verständlich für andere Entwickler:innen
 -   erschwert automatisiertes Testing
 -   nicht barrierefrei
 
 Note:
--   Hack -> Fix für den Hack in Browser X -> Fix für den Fix für den Hack...
+-   Hack > Fix für den Hack in Browser X > Fix für den Fix für den Hack...
 
 ----
 
@@ -78,7 +70,7 @@ Note:
 -   mithilfe von assistiven Technologien
 
 Note:
--   auf Englisch Accessiblity
+-   auf Englisch Accessibility
 -   soll kein Vortrag über Barrierefreiheit werden
 -   assistive Technologien helfen, die entsprechende Hürde zu überbrücken
     -   Screenreader für Sehbehinderte oder Analphabeten
@@ -146,7 +138,7 @@ Note:
 
 Note:
 -   DOCTYPE für Version, HTML5 wenn immer möglich
--   language -> hilft Browsern, beim übersetzen und Screenreadern beim vorlesen
+-   language → hilft Browsern, beim Übersetzen und Screenreadern beim Vorlesen
 -   charset: erstes Element in head wegen parsen des Dokuments
 -   Titel nicht leer
 -   Body darf leer sein (weil evtl. per JS gefüllt?)
@@ -156,27 +148,11 @@ Note:
 ### Tags
 
 -   Elemente in HTML
--   eigenständig versus in Kontext [&lt;option&gt;](https://www.w3.org/TR/html52/sec-forms.html#the-option-element)
+-   eigenständig versus in Kontext (z.B. [&lt;option&gt;](https://www.w3.org/TR/html52/sec-forms.html#the-option-element))
+-   verschiedener Zweck, siehe [elements of HTML](https://html.spec.whatwg.org/multipage/#toc-semantics)
 
 Note:
 -   Dokumentation zeigen, z.B. <input>, das nur im Form Sinn macht
-
-----
-
-<!-- .slide: class="block-vs-inline" -->
-### Tags: display block vs inline
-relevant beim Verschachteln von Elementen
-
-<div class="wrapper fragment">
-  <div class="block">block</div>
-  <span class="inline">inline<span>
-  <div class="block">block</div>
-</div>
-
-Note:
--   betrifft Darstellung und somit ausserhalb des Scopes von diesem Talk
--   trotzdem erwähnt, weil es später beim stylen viel Mühe spart, wenn im Markup schon sinnvoll gewählt
--   mdn inline-elements
 
 ----
 
@@ -187,11 +163,11 @@ Note:
 -   einige haben Default-Verhalten
 
 Note:
--   gefeuert meist durch Nutzerinterkation (Klick, Taste drücken)
+-   gefeuert meist durch Nutzerinteraktion (Klick, Taste drücken)
 -   bubblen von Kind zu Parent (focusin, focusout, nicht focus und blur)
--   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Form
+-   Default-Verhalten: z.B. für Accessibility, oder submit oder click auf einem Button in einem Formular
 -   Beispielabfolge (keydown, keypress, keyup)
--   gibt es bei Formularen noch was anderes als reset und submit?  Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
+-   gibt es bei Formularen noch was anderes als reset und submit? Z.B. Files im Hintergrund hochladen? Jein, gibt es beim File API <https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications>
 -   <https://eloquentjavascript.net/15_event.html>
 -   <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
 -   <https://developer.mozilla.org/en-US/docs/Web/Events#Keyboard_events>
@@ -202,8 +178,7 @@ Note:
 ## Antipatterns 😡
 
 Note:
--   should start < 17min
--   das verwenden von den falschen Elementen (es gibt andere / bessere)
+-   das Verwenden von den falschen Elementen (es gibt andere / bessere)
 -   das falsche verwenden von Elementen (den Zweck des benutzten Elements entfremden)
 
 ----
@@ -227,6 +202,7 @@ Klickt man, und dann passiert etwas
 -   <button type="button" onclick="alert('Hallo Welt');">button</button>: löst eine Aktion aus
 
 Note:
+-   wichtig, damit assistive Technologien auch richtig unterstützen können
 -   nicht vermischen
     -   wenn was wohin leiten soll, dann soll es auch wie ein Link aussehen u nd nicht wie ein Button
     -   Erwartungen der Benutzer
@@ -238,15 +214,15 @@ Note:
 
 ```
 <!-- falsch 👿 -->
-<button onclick="location.href='http://baselone.ch'">
+<button onclick="location.href='https://blkb.ch'">
   ich wäre besser ein Link
 </button>
 
 <!-- richtig 👼 -->
-<a href="http://baselone.ch">richtig so</a>
-<a href="http://baselone.ch"><img src="logo.svg"></a>
+<a href="https://blkb.ch">richtig so</a>
+<a href="https://blkb.ch"><img src="logo.svg"></a>
 ```
-<button class="hidden-unless-questioned" onclick="location.href='http://baselone.ch'">
+<button class="hidden-unless-questioned" onclick="location.href='https://blkb.ch'">
   ich wäre besser ein Link
 </button>
 
@@ -284,13 +260,15 @@ Note:
 
 ### Focus
 
--   <button>Button</button>, <a href="https://baselone.ch">link</a>
--   Form-Elemente <input placeholder="Name"> <select><option>1</option><option>2</option></select>
+-   <button>Button</button>, <a href="https://blkb.ch">link</a>
+-   Form-Elemente
+    -   <input placeholder="Name">
+    -   <select><option>1</option><option>2</option></select>
 -   alles mit keyindex!=-1
 
 Note:
 -   alle Elemente, mit denen der Benutzer interagieren können soll, müssen erreichbar sein
--   nicht grafisch ausblenden -> Accessibility
+-   nicht grafisch ausblenden → Accessibility
 -   FF <https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox>
 
 ----
@@ -349,7 +327,7 @@ Note:
 
 Note:
 -   kein form-Tag
--   was, wenn der User nicht klicken kann? -> submit Event verwenden
+-   was, wenn der User nicht klicken kann? → submit Event verwenden
 -   geht auch für JS-Lösungen
 -   nicht barrierefrei
 -   Browser hat evtl. Probleme beim Unterstützen/Vorbefüllen
@@ -361,7 +339,6 @@ Note:
 wenn es das Element nicht gibt, das man braucht
 
 Note:
--   should start < 26min
 -   verschiedene Gründe, wieso
     -   existiert nicht
     -   funktioniert nicht wie man es möchte
@@ -430,33 +407,29 @@ Select kann
 
 ----
 
-#### Beispiel
+#### Beispiele
 
-[MatSelect](https://material.angular.io/components/select/overview)
+-   [MatSelect](https://material.angular.io/components/select/overview)
+-   [selectmenu](https://open-ui.org/prototypes/selectmenu)
 
 Note:
 -   Angular Material gewählt, weil ich viel damit zu tun habe
 -   eigenes Markup
 -   offenes Dropdown in CDK-Layer, ganz unten in DOM
+-   Initiative für neuen Standard
 
 ----
 
 #### Fazit
 
-Jedesmal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
+Jedes Mal, wenn wir so ein Element nachbauen, müssen alle diese Features stimmen.
 -   in allen Browsern
 -   vertretbarer Performance-Einbusse
-
-Note:
--   Ist in der Spez mindestens seit HTML 2.0 1995, denke eher seit HTML 1.0, aber konnte ich nicht finden
--   Ländereingabe -> Switzerland -> Kann nicht per Tippen auswählen
 
 ---
 
 ## Tolle Beispiele 🥰
 
-Note:
--   should start < 33min
 
 ----
 
@@ -469,7 +442,7 @@ Note:
 
 -   neue Typen
 -   spezielle Keyboard-Unterstützung (z.B. für Zahlen)
--   Vorvalidierung
+-   Vorvalidierung durch Browser
 
 <div class="wrapper fragment">
   <label>Color <input type="color"></label><br>
@@ -511,7 +484,7 @@ Note:
 
 Note:
 -   unterstützt den Benutzer bei der Eingabe
--   kein Ersatz für Select, da es nicht enforcen kann, dass einer der ausgewählten Werte gewählt wird
+-   kein Ersatz für Select, da es nicht sicherstellen kann, dass einer der ausgewählten Werte gewählt wird
 
 ----
 
@@ -520,8 +493,8 @@ Note:
 
 Note:
 -   entstanden aus Polyfill
--   Selektiv Bilder anzeigen basierend auf Viewport
--   neue Bildformate -> Fallback für alte Browser
+-   selektiv Bilder anzeigen basierend auf Viewport
+-   neue Bildformate → Fallback für alte Browser
 
 
 ---
@@ -541,4 +514,4 @@ Note:
 
 ----
 
-### Danke für's Zuhören 🙋‍♀️
+### Danke fürs Zuhören 🙋‍♀️

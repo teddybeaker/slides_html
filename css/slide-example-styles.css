@@ -1,0 +1,43 @@
+/** generic */
+button {
+  font-size: 42px;
+}
+
+.hidden-unless-questioned {
+  display: none;
+}
+
+/** slide specific styles */
+
+.slide-buttons-vs-links button {
+  cursor: pointer;
+  padding: 0 .5em;
+}
+
+.slide-focus input,
+.slide-focus select {
+  font-size: 30px;
+}
+
+.slide-weird-forms button {
+  font-size: 20px;
+}
+
+.slide-select select {
+  font-size: 32px;
+}
+
+.slide-html-inputs .wrapper {
+  margin: 24px;
+  padding: 12px 24px;
+  font-size: smaller;
+  text-align: left;
+  background-color: grey;
+}
+
+.slide-word-break-opportunities .narrow-container {
+  background-color: grey;
+  display: inline-block;
+  width: 5em;
+  hyphens: auto;
+}
